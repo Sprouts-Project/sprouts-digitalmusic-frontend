@@ -1,0 +1,13 @@
+{
+  "index.home": "Home",
+  "index.source_code": "See our source code on GitHub!",
+  "index.apidocs_1": "See our",
+  "index.apidocs_2": "API documentation",
+  "index.apidocs_3": "too!",
+  "index.language": "Language",
+  "index.cars": "Cars",
+  "index.oops": "Oops!",
+  "index.error": "Something went wrong",
+  "index.login": "Login",
+  "index.logout": "Logout"
+}

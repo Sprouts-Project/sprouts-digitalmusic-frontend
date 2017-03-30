@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>{{ 'login.information' | translate }}</h2>
+        <div class="row">
+            <form novalidate class="simple-form" name="loginForm">
+                <div class="form-group">
+                    <label for="username">{{ 'login.username' | translate }}</label> <input type="text"
+                                                                                            class="form-control"
+                                                                                            name="username"
+                                                                                            placeholder="{{ 'login.username' | translate }}"
+                                                                                            ng-model="loginCredentials.username"
+                                                                                            required>
+                    <div ng-show="loginForm.$submitted || loginForm.username.$touched">
+                        <span ng-show="loginForm.username.$error.required"
+                              class="hasError">{{ 'login.username_required' | translate }}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">{{ 'login.password' | translate }}</label> <input type="password"
+                                                                                            class="form-control"
+                                                                                            name="password"
+                                                                                            placeholder="{{ 'login.password' | translate }}"
+                                                                                            ng-model="loginCredentials.password"
+                                                                                            required>
+                    <div ng-show="loginForm.$submitted || loginForm.password.$touched">
+                        <span ng-show="loginForm.password.$error.required"
+                              class="hasError">{{ 'login.password_required' | translate }}</span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default"
+                           ng-click="login()"
+                           value="{{ 'login.submit' | translate }}"
+                           ng-disabled="loginForm.$invalid"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

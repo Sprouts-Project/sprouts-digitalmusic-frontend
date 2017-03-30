@@ -1,0 +1,13 @@
+{
+  "car.brand": "Brand",
+  "car.model": "Model",
+  "car.numberPlate": "Number plate",
+  "car.user": "Owner",
+  "car.brand_required": "Brand is required",
+  "car.model_required": "Model is required",
+  "car.numberPlate_required": "Number plate is required",
+  "car.user_required": "Owner is required",
+  "car.info": "Car Information",
+  "car.reset": "Reset",
+  "car.submit": "Submit"
+}

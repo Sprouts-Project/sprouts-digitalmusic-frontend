@@ -1,0 +1,8 @@
+{
+  "login.information": "Login",
+  "login.username": "Username",
+  "login.username_required": "Username is required",
+  "login.password": "Password",
+  "login.password_required": "Password is required",
+  "login.submit": "Submit"
+}

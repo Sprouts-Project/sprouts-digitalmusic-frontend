@@ -1,0 +1,39 @@
+# Spring properties
+spring:
+  application:
+     name: frontend-service
+
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+# HTTP Server
+server:
+  port: 8080   # HTTP (Tomcat) port
+  
+zuul:
+  routes:
+    user:
+      path: /user/*
+      url: http://localhost:2222/user
+      sensitive-headers: Cookie,Set-Cookie
+    car:
+      path: /car/*
+      url: http://localhost:2222/car
+      sensitive-headers: Cookie,Set-Cookie
+    auth:
+      path: /oauth/*
+      url: http://localhost:2222/oauth
+      sensitive-headers: Cookie,Set-Cookie
+    api:
+      path: /v2/*
+      url: http://localhost:2222/v2
+    user-api:
+      path: /v2/user/*
+      url: http://localhost:2222/user
+    car-api:
+      path: /v2/car/*
+      url: http://localhost:2222/car
+
