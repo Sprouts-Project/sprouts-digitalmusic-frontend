@@ -26,3 +26,7 @@ footer {
 img.language {
 	cursor:pointer;
 }
+
+.pagination li {
+	cursor:pointer;
+}

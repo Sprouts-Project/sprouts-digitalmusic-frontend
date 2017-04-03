@@ -9,5 +9,7 @@
   "index.oops": "Ups!",
   "index.error": "Parece que algo va mal",
   "index.login": "Login",
-  "index.logout": "Logout"
+  "index.logout": "Logout",
+  "index.first": "Primera",
+  "index.last": "Última"
 }

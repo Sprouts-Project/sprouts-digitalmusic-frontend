@@ -23,6 +23,14 @@
     </div>
 </div>
 
+<ul class="pagination">
+	<li><a ng-click="reloadPaginated(0)">{{ 'index.first' | translate }}</a></li>
+	<li ng-repeat="i in range()" ng-class="{active: i == paginationInfo.currentPage}">
+			<a ng-click="reloadPaginated(i)">{{i+1}}</a>
+	</li>
+	<li><a ng-click="reloadPaginated(paginationInfo.totalPages-1)">{{ 'index.last' | translate }}</a></li>
+</ul>
+
 <div class="alert alert-danger alert-dismissable" ng-show="error">
 	<a class="close" data-dismiss="alert" aria-label="close" ng-click="error = false">&times;</a>
 	<strong>{{ 'index.oops' | translate }}</strong> {{ 'index.error' | translate }}.

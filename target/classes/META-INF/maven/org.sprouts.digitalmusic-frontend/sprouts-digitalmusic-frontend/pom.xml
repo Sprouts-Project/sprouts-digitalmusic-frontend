@@ -1,10 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.sprouts.digitalmusic</groupId>
-    <artifactId>sprouts-digitalmusic</artifactId>
-    <version>0.1</version>
-  </parent>
   <groupId>org.sprouts.digitalmusic-frontend</groupId>
   <artifactId>sprouts-digitalmusic-frontend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -34,6 +29,12 @@
 			<url>http://nexus.sprouts-project.com:8081/repository/maven-snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
+
+	<parent>
+		<groupId>org.sprouts.digitalmusic</groupId>
+		<artifactId>sprouts-digitalmusic</artifactId>
+		<version>0.1</version>
+	</parent>
   
   <dependencies>
 	<dependency>
