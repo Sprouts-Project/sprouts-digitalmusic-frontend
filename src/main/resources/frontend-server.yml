@@ -39,3 +39,6 @@ zuul:
       path: /v2/item/*
       url: http://localhost:2222/item
       sensitive-headers: Cookie,Set-Cookie
+    dashboard:
+      path: /dashboard/*
+      url: http://localhost:2222/dashboard
