@@ -1,6 +1,6 @@
 'use strict';
 (function() {
-	var ItemController = function($scope, $http) {
+	var ItemController = function($scope, $http, AuthService) {
 		$scope.items = [],
 		$scope.paginationInfo = {
 				currentPage : '0',
@@ -45,5 +45,5 @@
 
 	};
 
-	angularApp.controllers.controller('ItemController', [ '$scope', '$http', ItemController ]);
+	angularApp.controllers.controller('ItemController', [ '$scope', '$http', 'AuthService', ItemController ]);
 })();

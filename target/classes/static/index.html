@@ -24,8 +24,8 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="#/">{{ 'index.home' | translate }}</a></li>
-						<li><a href="#/login">{{ 'index.login' | translate }}</a></li>
-						<li><a href="#" ng-controller="LoginController" ng-click="logout()">{{ 'index.logout' | translate }}</a></li>
+						<li><a href="#/login" ng-controller="LoginController" ng-hide="isLoggedIn">{{ 'index.login' | translate }}</a></li>
+						<li><a href="#" ng-controller="LoginController" ng-click="logout()" ng-show="isLoggedIn">{{ 'index.logout' | translate }}</a></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
