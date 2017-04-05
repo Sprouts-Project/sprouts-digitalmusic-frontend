@@ -1,37 +1,43 @@
 <div class="container">
-    <div id="products" class="row list-group">
-        <div class="item  col-xs-4 col-lg-4" ng-repeat="item in items">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="{{item.imUrl}}" alt="{{item.title}}" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        {{item.title}}</h4>
-                    <p class="group inner list-group-item-text">
-                        {{item.description}}</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $ {{item.price}}</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div id="products" class="row list-group">
+		<div class="item  col-xs-4 col-lg-4" ng-repeat="item in items">
+			<div class="thumbnail">
+				<img class="group list-group-image" src="{{item.imUrl}}"
+					alt="{{item.title}}" />
+				<div class="caption">
+					<h4 class="group inner list-group-item-heading">
+						{{item.title}}</h4>
+					<p class="group inner list-group-item-text">
+						{{item.description}}</p>
+					<div class="row">
+						<div class="col-xs-12 col-md-6">
+							<p class="lead">$ {{item.price}}</p>
+						</div>
+						<div class="col-xs-12 col-md-6">
+							<a class="btn btn-success" href="#">Add to cart</a>
+						</div>
+						<div class="col-xs-12 col-md-6">
+							<a class="btn btn-success" href="#/item/admin?itemId={{item.id}}">Editar</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <ul class="pagination">
-	<li><a ng-click="reloadPaginated(0)">{{ 'index.first' | translate }}</a></li>
-	<li ng-repeat="i in range()" ng-class="{active: i == paginationInfo.currentPage}">
-			<a ng-click="reloadPaginated(i)">{{i+1}}</a>
-	</li>
-	<li><a ng-click="reloadPaginated(paginationInfo.totalPages-1)">{{ 'index.last' | translate }}</a></li>
+	<li><a ng-click="reloadPaginated(0)">{{ 'index.first' |
+			translate }}</a></li>
+	<li ng-repeat="i in range()"
+		ng-class="{active: i == paginationInfo.currentPage}"><a
+		ng-click="reloadPaginated(i)">{{i+1}}</a></li>
+	<li><a ng-click="reloadPaginated(paginationInfo.totalPages-1)">{{
+			'index.last' | translate }}</a></li>
 </ul>
 
 <div class="alert alert-danger alert-dismissable" ng-show="error">
-	<a class="close" data-dismiss="alert" aria-label="close" ng-click="error = false">&times;</a>
-	<strong>{{ 'index.oops' | translate }}</strong> {{ 'index.error' | translate }}.
+	<a class="close" data-dismiss="alert" aria-label="close"
+		ng-click="error = false">&times;</a> <strong>{{ 'index.oops'
+		| translate }}</strong> {{ 'index.error' | translate }}.
 </div>

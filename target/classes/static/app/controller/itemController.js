@@ -18,7 +18,6 @@
 		
 		$scope.reloadPaginated = function(page) {
 			$scope.paginationInfo.currentPage = page;
-			console.log(page);
 			init();
 		}
 		

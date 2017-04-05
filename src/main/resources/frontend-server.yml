@@ -19,6 +19,14 @@ zuul:
       path: /item/*
       url: http://localhost:2222/item
       sensitive-headers: Cookie,Set-Cookie
+    item-Admin:
+      path: /item/admin/*
+      url: http://localhost:2222/item/admin
+      sensitive-headers: Cookie,Set-Cookie  
+    category:
+      path: /category/*
+      url: http://localhost:2222/category
+      sensitive-headers: Cookie,Set-Cookie
     auth:
       path: /oauth/*
       url: http://localhost:2222/oauth
