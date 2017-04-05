@@ -4,10 +4,14 @@
 
 		if ($cookies.get("access_token") != null) {
 			$scope.isLoggedIn = true;
+			
+			if ($cookies.get("authority") != null) {
+				$scope.authority = $cookies.get("authority");
+			}
 		} else {
 			$scope.isLoggedIn = false;
 		}
-    	
+		
         $scope.login = function () {
 
             $scope.formRequest = {

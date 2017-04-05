@@ -1,2 +1,14 @@
 {
+	"item.title": "Title",
+	"item.description": "Description",
+	"item.brand" : "Brand",
+	"item.price" : "Price",
+	"item.imUrl" : "Picture URL",
+	"item.reset" : "Reset",
+	"item.submit" : "Submit",
+	"index.oops" : "Oops",
+	"index.error" : "Error",
+	"item.add_shoppingcart" : "Add to shopping cart",
+	"item.delete" : "Delete",
+	"item.edit" : "Edit"
 }
