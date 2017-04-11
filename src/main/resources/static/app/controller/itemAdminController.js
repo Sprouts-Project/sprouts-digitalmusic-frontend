@@ -1,6 +1,6 @@
 'use strict';
 (function() {
-	var ItemAdminController = function($scope, $http, $routeParams) {
+	var ItemAdminController = function($scope, $http, $routeParams, $location) {
 		$scope.item,
 		$scope.categories = [],
 		$scope.error = false;
@@ -32,18 +32,20 @@
 			});
 		}
 
-		$scope.doDeleteItem = function(id) {
+		$scope.doDeleteItem = function(id, version) {
 			$http({
 				method : 'POST',
 				url : '/item/admin/delete',
 				data : {
-					id : id
+					id : id,
+					version : version
 				},
 				headers : {
 					'Content-type' : 'application/json;charset=utf-8'
 				}
 			}).success(function(response) {
 				$scope.error = false;
+				$location.path('/');
 			}).error(function (response) {
 				$scope.error = true;
 			});
@@ -83,5 +85,5 @@
 
 	};
 
-	angularApp.controllers.controller('ItemAdminController', [ '$scope', '$http', '$routeParams', ItemAdminController ]);
+	angularApp.controllers.controller('ItemAdminController', [ '$scope', '$http', '$routeParams', '$location', ItemAdminController ]);
 })();
