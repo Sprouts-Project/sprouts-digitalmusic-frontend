@@ -4844,7 +4844,9 @@ a.al-sidebar-list-link {
   height: 350px;
   margin-top: -20px; }
 
-#amChartMap {
+#amChartMap,
+#amChartMap2,
+#overviewFinanceMap {
   width: 100%;
   height: 315px; }
 

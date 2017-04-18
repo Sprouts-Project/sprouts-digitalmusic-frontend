@@ -6,42 +6,45 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.dashboard')
-      .controller('DashboardMapCtrl', DashboardMapCtrl);
+      .controller('DashboardMap2Ctrl', DashboardMap2Ctrl);
 
   /** @ngInject */
-  function DashboardMapCtrl($http, baConfig, layoutPaths) {
+  function DashboardMap2Ctrl($http, baConfig, layoutPaths) {
     var layoutColors = baConfig.colors;
     $http.get('/dashboard/customer-overview').then(function(response) {
+    	
+    	var areas = [];
     	
     	var areas = [];
     	var max = 0;
     	var min = -1;
     	var step = 0;
-    	response.data.average_age_by_state.forEach(function(item, index){
-    		var val = item.age;
+    	response.data.customers_by_state.forEach(function(item, index){
+    		var val = item.totalCustomers;
     		max = (val > max)?val : max;
     		min = (min < 0 || min > val)? val : min;
     	});
     	
     	step = (max-min) / 6;
 
-    	response.data.average_age_by_state.forEach(function(item, index){
+    	response.data.customers_by_state.forEach(function(item, index){
     		var color = '#4169E1';
-    		if(item.age < (min+step)){
+    		if(item.totalCustomers < (min+step)){
     			color = '#E0FFFF';
-    		}else if(item.age < (min+2*step)){
+    		}else if(item.totalCustomers < (min+2*step)){
     			color = '#B0E0E6';
-    		}else if(item.age < (min+3*step)){
+    		}else if(item.totalCustomers < (min+3*step)){
     			color = '#ADD8E6';
-    		}else if(item.age < (min+4*step)){
+    		}else if(item.totalCustomers < (min+4*step)){
     			color = '#87CEFA';
-    		}else if(item.age < (min+5*step)){
+    		}else if(item.totalCustomers < (min+5*step)){
     			color = '#6495ED';
     		}
-    		areas.push({ title: item.name, color: color, id: item.abbreviaton, customData: parseFloat(item.age).toFixed(2) });
+    		areas.push({ title: item.name, color: color, id: item.abbreviation, customData: item.totalCustomers });
+
     	});
     	
-	    var map = AmCharts.makeChart('amChartMap', {
+	    var map = AmCharts.makeChart('amChartMap2', {
 	      type: 'map',
 	      theme: 'blur',
 	      zoomControl: { zoomControlEnabled: false, panControlEnabled: false },
@@ -60,7 +63,7 @@
 	        alpha: 0.8,
 	        unlistedAreasAlpha: 0.2,
 	        unlistedAreasColor: layoutColors.defaultText,
-	        balloonText: '[[title]]: [[customData]] average age'
+	        balloonText: '[[title]]: [[customData]] customers'
 	      },
 	
 	

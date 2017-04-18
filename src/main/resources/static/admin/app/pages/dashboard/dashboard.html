@@ -3,43 +3,43 @@
 <div class="row">
   <div class="col-lg-6 col-md-12 col-sm-12"
        ba-panel
-       ba-panel-title="Acquisition Channels"
-       ba-panel-class="medium-panel traffic-panel">
-    <traffic-chart></traffic-chart>
+       ba-panel-title="Average age by state"
+       ba-panel-class="medium-panel">
+    <dashboard-map></dashboard-map>
   </div>
   <div class="col-lg-6 col-md-12 col-sm-12"
        ba-panel
-       ba-panel-title="Users by Country"
+       ba-panel-title="Customers by State"
        ba-panel-class="medium-panel">
-    <dashboard-map></dashboard-map>
+    <dashboard-map2></dashboard-map2>
+  </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-xlg-9 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+<h2> Finances overview </h2>
+  <div class="col-lg-6 col-md-12 col-sm-12">
     <div class="row">
       <div class="col-xlg-8 col-lg-12 col-md-12 col-sm-7 col-xs-12"
            ba-panel
-           ba-panel-title="Revenue"
+           ba-panel-title="Monthly sales"
            ba-panel-class="medium-panel">
         <dashboard-line-chart></dashboard-line-chart>
       </div>
-      <div class="col-xlg-4 col-lg-12 col-md-12 col-sm-5 col-xs-12"
-           ba-panel
-           ba-panel-class="popular-app medium-panel">
-        <popular-app></popular-app>
-      </div>
-    </div>
+  	</div>
   </div>
-  <div class="col-xlg-3 col-lg-6 col-md-6 col-sm-12 col-xs-12"
+   <div class="col-lg-6 col-md-12 col-sm-12"
        ba-panel
-       ba-panel-title="Feed"
-       ba-panel-class="large-panel with-scroll feed-panel">
-    <blur-feed></blur-feed>
+       ba-panel-title="Monthly sales by State"
+       ba-panel-class="medium-panel">
+    <overview-finance-map></overview-finance-map>
   </div>
+ 
 </div>
 
 <div class="row shift-up">
+<h2>Operations overview</h2>
+
   <div class="col-xlg-3 col-lg-6 col-md-6 col-xs-12"
        ba-panel
        ba-panel-title="To Do List"
