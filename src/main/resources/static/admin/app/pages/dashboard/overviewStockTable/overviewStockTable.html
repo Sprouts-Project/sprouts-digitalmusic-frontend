@@ -1,0 +1,20 @@
+	<div ba-panel ba-panel-title="Top 20 most monthly demanded items" ba-panel-class="with-scroll table-panel">
+		<div class="vertical-scroll">
+		  <table class="table table-striped">
+			<thead>
+				<tr>
+		      		<th class="table-id">#</th>
+		      		<th>Item name</th>
+		      		<th>Quantity</th>
+		    	</tr>
+		    </thead>
+		    <tbody>
+			    <tr ng-repeat="product in products">
+			      <td class="table-id">{{product.id}}</td>
+			      <td>{{product.title}}</td>
+			      <td>{{product.quantity}}</td>
+			    </tr>
+		    </tbody>
+		  </table>
+		</div>
+	</div>

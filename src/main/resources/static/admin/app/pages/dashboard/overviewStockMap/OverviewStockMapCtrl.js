@@ -6,12 +6,12 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.dashboard')
-      .controller('OverviewFinanceMapCtrl', OverviewFinanceMapCtrl);
+      .controller('OverviewStockMapCtrl', OverviewStockMapCtrl);
 
   /** @ngInject */
-  function OverviewFinanceMapCtrl($http, orderByFilter, baConfig, layoutPaths) {
+  function OverviewStockMapCtrl($http, orderByFilter, baConfig, layoutPaths) {
     var layoutColors = baConfig.colors;
-    $http.get('/dashboard/finance-overview').then(function(response) {
+    $http.get('/dashboard/operation-overview').then(function(response) {
 
 
     	var areas = [];
@@ -19,7 +19,7 @@
     	var min = -1;
     	var step = 0;
     	response.data.monthly_sales_by_state.forEach(function(item, index){
-    		var val = item.value;
+    		var val = item.numProducts;
     		max = (val > max)?val : max;
     		min = (min < 0 || min > val)? val : min;
     	});
@@ -28,22 +28,22 @@
 
     	response.data.monthly_sales_by_state.forEach(function(item, index){
     		var color = '#4169E1';
-    		if(item.value < (min+step)){
+    		if(item.numProducts < (min+step)){
     			color = '#E0FFFF';
-    		}else if(item.value < (min+2*step)){
+    		}else if(item.numProducts < (min+2*step)){
     			color = '#B0E0E6';
-    		}else if(item.value < (min+3*step)){
+    		}else if(item.numProducts < (min+3*step)){
     			color = '#ADD8E6';
-    		}else if(item.value < (min+4*step)){
+    		}else if(item.numProducts < (min+4*step)){
     			color = '#87CEFA';
-    		}else if(item.value < (min+5*step)){
+    		}else if(item.numProducts < (min+5*step)){
     			color = '#6495ED';
     		}
-    		areas.push({ title: item.name, color: color, id: item.abbreviation, customData: parseFloat(item.value).toFixed(2) });
+    		areas.push({ title: item.name, color: color, id: item.abbreviation, customData: parseFloat(item.numProducts).toFixed(2) });
 
     	});
     	
-	    var map = AmCharts.makeChart('overviewFinanceMap', {
+	    var map = AmCharts.makeChart('overviewStockMap', {
 	      type: 'map',
 	      theme: 'blur',
 	      zoomControl: { zoomControlEnabled: false, panControlEnabled: false },

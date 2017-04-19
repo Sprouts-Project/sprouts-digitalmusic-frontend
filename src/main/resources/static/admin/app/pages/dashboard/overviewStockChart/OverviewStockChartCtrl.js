@@ -6,22 +6,22 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.dashboard')
-      .controller('DashboardLineChartCtrl', DashboardLineChartCtrl);
+      .controller('OverviewStockChartCtrl', OverviewStockChartCtrl);
 
   /** @ngInject */
-  function DashboardLineChartCtrl($http,orderByFilter, baConfig, layoutPaths, baUtil) {
+  function OverviewStockChartCtrl($http,orderByFilter, baConfig, layoutPaths, baUtil) {
     var layoutColors = baConfig.colors;
     var graphColor = baConfig.theme.blur ? '#000000' : layoutColors.primary;
     
-    $http.get('/dashboard/finance-overview').then(function(response) {
+    $http.get('/dashboard/operation-overview').then(function(response) {
     	
     	var chartData= [];
     	response.data.monthly_sales.forEach(function(item, index){
-    		chartData.push({ date: new Date(item.year,item.month), value: parseFloat(item.value).toFixed(2) });
+    		chartData.push({ date: new Date(item.year,item.month), value: parseFloat(item.numProducts).toFixed(2) });
     	});
     	chartData = orderByFilter(chartData, 'date', false);
 	  
-    	var chart = AmCharts.makeChart("amchart", {
+    	var chart = AmCharts.makeChart("overviewStockChart", {
     	    "type": "serial",
     	    "theme": "light",
     	    "dataProvider": chartData,
@@ -33,7 +33,7 @@
     	    "graphs": [{
     	        "bulletSize": 14,
     	        "valueField": "value",
-    	         "balloonText":"<div style='margin:10px; text-align:left;'><span style='font-size:13px'>[[category]]</span><br><span style='font-size:18px'>Monthly sale: [[value]]</span>",
+    	         "balloonText":"<div style='margin:10px; text-align:left;'><span style='font-size:13px'>[[category]]</span><br><span style='font-size:18px'>Number of products: [[value]]</span>",
     	    }],
     	    "marginTop": 20,
     	    "marginRight": 70,
