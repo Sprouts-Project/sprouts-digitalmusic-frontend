@@ -29,6 +29,7 @@
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="#/">{{ 'index.home' | translate }}</a></li>
 						<li><a href="#/login" ng-controller="LoginController" ng-hide="isLoggedIn">{{ 'index.login' | translate }}</a></li>
+						<li><a href="#/signup" ng-controller="LoginController" ng-hide="isLoggedIn">{{ 'index.signup' | translate }}</a></li>
 						<li><a href="#" ng-controller="LoginController" ng-click="logout()" ng-show="isLoggedIn">{{ 'index.logout' | translate }}</a></li>
 					</ul>
 				</div>
@@ -94,6 +95,7 @@
 	<script src="./app/controller/itemController.js"></script>
 	<script src="./app/controller/itemAdminController.js"></script>
 	<script src="./app/controller/loginController.js"></script>
+	<script src="./app/controller/signupController.js"></script>
 	<script src="./app/controller/apiDocController.js"></script>
 </body>
 </html>

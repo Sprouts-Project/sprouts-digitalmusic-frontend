@@ -1,0 +1,22 @@
+{
+  "signup.customer.information": "Datos personales",
+  "signup.name": "Nombre",
+  "signup.name_required": "El nombre es obligatorio",
+  "signup.email": "Email",
+  "signup.email_required": "El email es obligatorio",
+  "signup.birthDate": "Fecha de nacimiento",
+  "signup.birthDate_required": "La fecha de nacimiento es obligatoria",
+  "signup.state": "Estado",
+  "signup.state_required": "El estado es obligatorio",
+  "signup.sex": "Sexo",
+  "signup.sex.male": "Masculino",
+  "signup.sex.female": "Femenino",
+  "signup.user_account.information": "Datos de la cuenta de usuario",
+  "signup.username": "Nombre de usuario",
+  "signup.username_required": "El nombre de usuario es obligatorio",
+  "signup.password": "Contraseña",
+  "signup.password_required": "La contraseña es obligatoria",
+  "signup.submit": "Regístrate",
+  "signup.oops": "Ups!",
+  "signup.error": "Algo fue mal"
+}

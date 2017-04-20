@@ -11,5 +11,6 @@
   "index.login": "Login",
   "index.logout": "Logout",
   "index.first": "First",
-  "index.last": "Last"
+  "index.last": "Last",
+  "index.signup": "Sign up"
 }

@@ -46,3 +46,7 @@ zuul:
     dashboard:
       path: /dashboard/*
       url: http://localhost:2222/dashboard
+    customer:
+          path: /customer/*
+          url: http://localhost:2222/customer
+          sensitive-headers: Cookie,Set-Cookie

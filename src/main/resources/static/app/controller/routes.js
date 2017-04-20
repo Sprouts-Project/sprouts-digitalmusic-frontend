@@ -13,6 +13,9 @@
 		}).when('/item/admin', {
 			controller : 'ItemAdminController',
 			templateUrl : '/app/view/item/crud.html'
-		}).otherwise('/');
+		}).when('/signup', {
+            controller : 'SignupController',
+            templateUrl : '/app/view/signup/signup.html'
+        }).otherwise('/');
 	} ]);
 })();

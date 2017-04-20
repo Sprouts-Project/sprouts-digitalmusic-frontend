@@ -30,3 +30,7 @@ img.language {
 .pagination li {
 	cursor:pointer;
 }
+
+.align-center {
+	text-align: center;
+}

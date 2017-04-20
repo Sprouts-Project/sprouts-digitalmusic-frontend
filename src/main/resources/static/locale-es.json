@@ -11,5 +11,6 @@
   "index.login": "Login",
   "index.logout": "Logout",
   "index.first": "Primera",
-  "index.last": "�ltima"
+  "index.last": "Última",
+  "index.signup": "Regístrate"
 }

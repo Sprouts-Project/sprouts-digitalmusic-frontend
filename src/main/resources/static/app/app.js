@@ -18,6 +18,9 @@ angularApp.config(['$translateProvider', function ($translateProvider) {
         }, {
             prefix: '/app/view/login/locale-',
             suffix: '.json'
+        }, {
+            prefix: '/app/view/signup/locale-',
+            suffix: '.json'
         }
         ]
     });
