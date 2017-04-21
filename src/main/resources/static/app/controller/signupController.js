@@ -1,6 +1,6 @@
 'use strict';
 (function () {
-    var SignupController = function ($scope, $http, $resource, $httpParamSerializer, $cookies, AuthService) {
+    var SignupController = function ($scope, $http, $resource, $httpParamSerializer, $cookies, $window, AuthService) {
 
         $scope.customerInfo = {
             sex : 'M'
@@ -31,5 +31,5 @@
 
     };
 
-    angularApp.controllers.controller('SignupController', ['$scope', '$http', '$resource', '$httpParamSerializer', '$cookies', 'AuthService', SignupController]);
+    angularApp.controllers.controller('SignupController', ['$scope', '$http', '$resource', '$httpParamSerializer', '$cookies', '$window', 'AuthService', SignupController]);
 })();

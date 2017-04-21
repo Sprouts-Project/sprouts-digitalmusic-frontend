@@ -44,11 +44,7 @@
         };
 
         $scope.logout = function () {
-            $http.get("/oauth/revoke").then(function () {
-                $cookies.remove("authority");
-                $cookies.remove("access_token");
-                window.location.replace('/');
-            });
+            AuthService.logout();
         };
     };
 

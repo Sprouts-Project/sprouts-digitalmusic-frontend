@@ -16,7 +16,5 @@
   "signup.username_required": "El nombre de usuario es obligatorio",
   "signup.password": "Contraseña",
   "signup.password_required": "La contraseña es obligatoria",
-  "signup.submit": "Regístrate",
-  "signup.oops": "Ups!",
-  "signup.error": "Algo fue mal"
+  "signup.submit": "Regístrate"
 }

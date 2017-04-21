@@ -12,5 +12,6 @@
   "index.logout": "Logout",
   "index.first": "First",
   "index.last": "Last",
-  "index.signup": "Sign up"
+  "index.signup": "Sign up",
+  "index.modify_personal_data": "Modify personal data"
 }

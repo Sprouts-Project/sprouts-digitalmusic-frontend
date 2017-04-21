@@ -16,7 +16,5 @@
   "signup.username_required": "Username is required",
   "signup.password": "Password",
   "signup.password_required": "Password is required",
-  "signup.submit": "Sign up",
-  "signup.oops": "Oops!",
-  "signup.error": "Something went wrong"
+  "signup.submit": "Sign up"
 }

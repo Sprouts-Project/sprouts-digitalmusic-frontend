@@ -21,6 +21,9 @@ angularApp.config(['$translateProvider', function ($translateProvider) {
         }, {
             prefix: '/app/view/signup/locale-',
             suffix: '.json'
+        }, {
+            prefix: '/app/view/customer/locale-',
+            suffix: '.json'
         }
         ]
     });
@@ -60,7 +63,7 @@ angularApp.controller('languageController', ['$translate', '$scope',
         };
     }]);
 
-angularApp.service('AuthService', function() {
+angularApp.service('AuthService', ['$http', function($http) {
     var $cookies;
     angular.injector(['ngCookies']).invoke(['$cookies', function (_$cookies_) {
         $cookies = _$cookies_;
@@ -73,4 +76,13 @@ angularApp.service('AuthService', function() {
         }
         return authority;
     };
-});
+
+    this.logout = function(){
+        $http.get("/oauth/revoke").then(function () {
+            $cookies.remove("authority");
+            $cookies.remove("access_token");
+            window.location.replace('/');
+        });
+    };
+
+}]);

@@ -16,6 +16,9 @@
 		}).when('/signup', {
             controller : 'SignupController',
             templateUrl : '/app/view/signup/signup.html'
+        }).when('/customer/show', {
+            controller : 'CustomerController',
+            templateUrl : '/app/view/customer/edit_profile.html'
         }).otherwise('/');
 	} ]);
 })();

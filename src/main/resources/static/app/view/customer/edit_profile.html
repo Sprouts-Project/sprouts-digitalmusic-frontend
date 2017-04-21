@@ -88,21 +88,32 @@
                                                                                              class="form-control"
                                                                                              name="password"
                                                                                              placeholder="{{ 'signup.password' | translate }}"
-                                                                                             ng-model="userAccountInfo.password"
+                                                                                             ng-model="userAccountInfo.password">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password">{{ 'customer.confirm_password' | translate }}</label> <input type="password"
+                                                                                             class="form-control"
+                                                                                             name="confirm_password"
+                                                                                             placeholder="{{ 'customer.confirm_password' | translate }}"
+                                                                                             ng-model="userAccountInfo.confirm_password"
                                                                                              required>
                     <div ng-show="userAccountForm.$submitted || userAccountForm.password.$touched">
                         <span ng-show="userAccountForm.password.$error.required"
-                              class="hasError">{{ 'signup.password_required' | translate }}</span>
+                              class="hasError">{{ 'customer.confirm_password_required' | translate }}</span>
                     </div>
                 </div>
 
                 <div class="form-group align-center">
                     <input type="submit" class="btn btn-default"
-                           ng-click="signup()"
-                           value="{{ 'signup.submit' | translate }}"
+                           ng-click="editData()"
+                           value="{{ 'customer.edit_data' | translate }}"
                            ng-disabled="customerForm.$invalid || userAccountForm.$invalid"/>
                 </div>
             </form>
+            <div class="alert alert-warning alert-dismissable">
+                <strong>{{ 'customer.edit_data_warning' | translate }}</strong> {{ 'customer.edit_data_warning_message' | translate }}.
+            </div>
             <div class="alert alert-danger alert-dismissable" ng-show="error">
                 <a class="close" data-dismiss="alert" aria-label="close" ng-click="error = false">&times;</a>
                 <strong>{{ 'index.oops' | translate }}</strong> {{ 'index.error' | translate }}.

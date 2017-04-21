@@ -1,0 +1,7 @@
+{
+  "customer.confirm_password": "Current password",
+  "customer.confirm_password_required": "Current password is required",
+  "customer.edit_data": "Edit data",
+  "customer.edit_data_warning": "Warning!",
+  "customer.edit_data_warning_message": "The session will be closed after the modification of the data"
+}
