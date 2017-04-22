@@ -33,6 +33,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#/login" ng-controller="LoginController" ng-hide="isLoggedIn">{{ 'index.login' | translate }}</a></li>
 						<li><a href="#/signup" ng-controller="LoginController" ng-hide="isLoggedIn">{{ 'index.signup' | translate }}</a></li>
+						<li><a href="#/shoppingCart?loadItems=1" ng-controller="LoginController" ng-show="isLoggedIn">{{ 'index.shoppingCart' | translate }}</a></li>
 						<li><a href="#/customer/show" ng-controller="LoginController" ng-show="isLoggedIn">{{ 'index.modify_personal_data' | translate }}</a></li>
 						<li><a href="#" ng-controller="LoginController" ng-click="logout()" ng-show="isLoggedIn">{{ 'index.logout' | translate }}</a></li>
 					</ul>
@@ -56,7 +57,7 @@
 				</div>
 				<div class="col-md-4">
 					<h4>{{ 'index.source_code' | translate }}</h4>
-					<a href="https://github.com/jjxp/sprouts-core/"><img
+					<a href="https://github.com/sprouts-project/"><img
 						src="img/github-white.png" height="50" /></a> <br>
 					<br>
 					<p>
@@ -105,5 +106,7 @@
 	<script src="./app/controller/orderAdminController.js"></script>
 	<script src="./app/controller/apiDocController.js"></script>
 	<script src="./app/controller/itemDisplayController.js"></script>
+	<script src="./app/controller/shoppingCartController.js"></script>
+	
 </body>
 </html>
