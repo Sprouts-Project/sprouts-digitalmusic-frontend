@@ -1,0 +1,12 @@
+{
+	"item.title": "Título",
+	"item.description": "Descripción",
+	"item.brand" : "Marca",
+	"item.price" : "Precio",
+	"item.imUrl" : "Url de la imagen",
+	"item.reset" : "Reiniciar",
+	"index.oops" : "Oh oh",
+	"index.error" : "Error",
+	"item.delete" : "Eliminar",
+	"item.view" : "Ver"
+}

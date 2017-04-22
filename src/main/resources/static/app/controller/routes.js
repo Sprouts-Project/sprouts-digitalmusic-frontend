@@ -10,6 +10,9 @@
 		}).when('/item/display', {
 			controller : 'ItemDisplayController',
 			templateUrl : '/app/view/item/display.html'
+		}).when('/shoppingCart', {
+			controller : 'ShoppingCartController',
+			templateUrl : '/app/view/shoppingCart/display.html'
 		}).when('/apiDoc', {
 			templateUrl: 'app/view/api/api.html',
 			controller: 'ApiDocController'

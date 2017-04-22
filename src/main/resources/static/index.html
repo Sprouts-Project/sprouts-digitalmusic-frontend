@@ -35,6 +35,8 @@
 						<li><a href="#/signup" ng-controller="LoginController" ng-hide="isLoggedIn">{{ 'index.signup' | translate }}</a></li>
 						<li><a href="#/customer/show" ng-controller="LoginController" ng-show="isLoggedIn">{{ 'index.modify_personal_data' | translate }}</a></li>
 						<li><a href="#" ng-controller="LoginController" ng-click="logout()" ng-show="isLoggedIn">{{ 'index.logout' | translate }}</a></li>
+						<li><a href="#/shoppingCart" ng-controller="LoginController" ng-show="isLoggedIn">{{ 'index.shoppingCart' | translate }}</a></li>
+						
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
@@ -105,5 +107,7 @@
 	<script src="./app/controller/orderAdminController.js"></script>
 	<script src="./app/controller/apiDocController.js"></script>
 	<script src="./app/controller/itemDisplayController.js"></script>
+	<script src="./app/controller/shoppingCartController.js"></script>
+	
 </body>
 </html>
