@@ -2,6 +2,7 @@
 (function() {
 	var ItemController = function($scope, $http, AuthService) {
 		$scope.items = [],
+		$scope.reviews = [],
 		$scope.paginationInfo = {
 				currentPage : '0',
 				minPage : '0',
@@ -35,6 +36,37 @@
 			}).error(function (response) {
 				$scope.error = true;
 	        });
+		}
+		
+		self.doGetItem = function(id) {
+			$http({
+				method : 'GET',
+				url : '/item/display',
+				params : {
+					itemId : id
+				}
+			}).success(function(response) {
+				$scope.item=response;
+				$scope.error = false;
+				self.doGetReviews(id);
+			}).error(function(response) {
+				$scope.error = true;
+			});
+		}
+		
+		self.doGetReviews = function(id) {
+			$http({
+				method : 'GET',
+				url : '/review/findByItem',
+				params : {
+					itemId : id
+				}
+			}).success(function(response) {
+				$scope.reviews = response;
+				$scope.error = false;
+			}).error(function (response) {
+				$scope.error = true;
+			});
 		}
 
 		function init() {

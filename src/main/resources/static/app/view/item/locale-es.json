@@ -10,5 +10,6 @@
 	"index.error" : "Error",
 	"item.add_shoppingcart" : "Añadir al carrito",
 	"item.delete" : "Eliminar",
-	"item.edit" : "Editar"
+	"item.edit" : "Editar",
+	"item.view" : "Ver"
 }

@@ -23,6 +23,10 @@ zuul:
       path: /item/admin/*
       url: http://localhost:2222/item/admin
       sensitive-headers: Cookie,Set-Cookie  
+    review:
+      path: /review/*
+      url: http://localhost:2222/review
+      sensitive-headers: Cookie,Set-Cookie  
     category:
       path: /category/*
       url: http://localhost:2222/category

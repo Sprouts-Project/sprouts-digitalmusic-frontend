@@ -54,7 +54,7 @@
 		self.doEditItem = function(id) {
 			$http({
 				method : 'GET',
-				url : '/item/admin/edit',
+				url : '/item/display',
 				params : {
 					itemId : id
 				}

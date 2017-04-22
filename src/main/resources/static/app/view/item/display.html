@@ -1,0 +1,29 @@
+
+<div class="thumbnail">
+	<img class="group list-group-image" src="{{item.imUrl}}"
+		alt="{{item.title}}" height="300px" />
+	<div class="caption">
+		<h4 class="group inner list-group-item-heading">{{item.title}}</h4>
+		<p class="group inner list-group-item-text">{{item.description}}</p>
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<p class="lead">$ {{item.price}}</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="products" class="row list-group">
+	<div class="item  col-xs-4 col-lg-4" ng-repeat="review in reviews">
+		<div class="thumbnail">
+			<div class="caption">
+				<h4 class="group inner list-group-item-heading">
+					{{review.date}}</h4>
+				<p class="group inner list-group-item-text">
+					{{review.reviewText}}</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

@@ -7,6 +7,9 @@
 		}).when('/login', {
 			controller : 'LoginController',
 			templateUrl : '/app/view/login/login.html'
+		}).when('/item/display', {
+			controller : 'ItemDisplayController',
+			templateUrl : '/app/view/item/display.html'
 		}).when('/apiDoc', {
 			templateUrl: 'app/view/api/api.html',
 			controller: 'ApiDocController'
