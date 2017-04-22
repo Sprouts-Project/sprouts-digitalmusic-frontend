@@ -13,6 +13,9 @@ angularApp.config(['$translateProvider', function ($translateProvider) {
             prefix: '/app/view/item/locale-',
             suffix: '.json'
         }, {
+            prefix: '/app/view/shoppingCart/locale-',
+            suffix: '.json'
+        }, {
             prefix: '/app/view/api/locale-',
             suffix: '.json'
         }, {

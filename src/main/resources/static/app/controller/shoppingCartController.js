@@ -1,6 +1,6 @@
 'use strict';
 (function() {
-	var ShoppingCartController = function($scope, $http, $routeParams, $location) {
+	var ShoppingCartController = function($scope, $http, $routeParams) {
 		$scope.items = [],
 		$scope.error = false;
 
@@ -16,21 +16,18 @@
 			});
 		}
 
-		$scope.doAddItem = function(itemId) {
-			console.log(itemId);
+		$scope.doAddItem = function(id) {
 			$http({
-				method : 'POST',
+				method : 'GET',
 				url : '/shoppingCart/addItem',
-				data : {
-					itemId : itemId
+				params : {
+					itemId : id
 				},
 				headers : {
 					'Content-type' : 'application/json;charset=utf-8'
 				}
 			}).success(function(response) {
 				$scope.error = false;
-				self.doGetItems;
-				console.log("prueba");
 			}).error(function(response) {
 				$scope.errors = true;
 			});
@@ -38,17 +35,17 @@
 
 		$scope.doDeleteItem = function(id) {
 			$http({
-				method : 'POST',
+				method : 'GET',
 				url : '/shoppingCart/deleteItem',
-				data : {
-					id : id
+				params : {
+					itemId : id
 				},
 				headers : {
 					'Content-type' : 'application/json;charset=utf-8'
 				}
 			}).success(function(response) {
 				$scope.error = false;
-				self.doGetItems;
+				self.doGetItems();
 			}).error(function (response) {
 				$scope.error = true;
 			});
@@ -56,25 +53,29 @@
 
 		$scope.doClear = function() {
 			$http({
-				method : 'POST',
+				method : 'GET',
 				url : '/shoppingCart/clear',
 				headers : {
 					'Content-type' : 'application/json;charset=utf-8'
 				}
 			}).success(function(response) {
 				$scope.error = false;
-				self.doGetItems;
+				self.doGetItems();
 			}).error(function (response) {
 				$scope.error = true;
 			});
 		}
 
 		function init() {
-			self.doGetItems();
+            var loadItems = $routeParams.loadItems;
+
+            if(loadItems == '1') {
+                self.doGetItems();
+			}
 		}
 		init();
 
 	};
 
-	angularApp.controllers.controller('ShoppingCartController', [ '$scope', '$http', '$routeParams', '$location', ShoppingCartController ]);
+	angularApp.controllers.controller('ShoppingCartController', [ '$scope', '$http', '$routeParams', ShoppingCartController ]);
 })();

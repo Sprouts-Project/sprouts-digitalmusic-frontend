@@ -1,12 +1,7 @@
 {
-	"item.title": "T�tulo",
-	"item.description": "Descripci�n",
-	"item.brand" : "Marca",
-	"item.price" : "Precio",
-	"item.imUrl" : "Url de la imagen",
-	"item.reset" : "Reiniciar",
-	"index.oops" : "Oh oh",
-	"index.error" : "Error",
-	"item.delete" : "Eliminar",
-	"item.view" : "Ver"
+  "shoppingCart.display" : "Mi carrito de la compra",
+  "shoppingCart.add" : "Añadir al carrito",
+  "shoppingCart.remove" : "Eliminar",
+  "shoppingCart.empty" : "¡Tu carrito de la compra está vacío!",
+  "shoppingCart.clear" : "Vaciar carrito de la compra"
 }

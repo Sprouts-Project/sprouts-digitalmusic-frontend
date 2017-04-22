@@ -1,12 +1,7 @@
 {
-	"item.title": "Title",
-	"item.description": "Description",
-	"item.brand" : "Brand",
-	"item.price" : "Price",
-	"item.imUrl" : "Picture URL",
-	"index.oops" : "Oops",
-	"index.error" : "Error",
-	"item.delete" : "Delete",
-	"item.edit" : "Edit",
-	"item.view" : "View"
+  "shoppingCart.display" : "My shopping cart",
+  "shoppingCart.add" : "Add to shopping cart",
+  "shoppingCart.remove" : "Remove",
+  "shoppingCart.empty" : "Your shopping cart is empty!",
+  "shoppingCart.clear" : "Empty shopping cart"
 }
