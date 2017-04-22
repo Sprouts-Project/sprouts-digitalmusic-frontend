@@ -50,3 +50,7 @@ zuul:
           path: /customer/*
           url: http://localhost:2222/customer
           sensitive-headers: Cookie,Set-Cookie
+    order:
+              path: /order/*
+              url: http://localhost:2222/order
+              sensitive-headers: Cookie,Set-Cookie
