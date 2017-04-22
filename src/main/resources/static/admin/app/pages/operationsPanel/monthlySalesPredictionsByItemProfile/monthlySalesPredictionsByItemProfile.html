@@ -1,0 +1,39 @@
+<div class="row"
+	ng-controller="MonthlySalesPredictionsByItemProfileCtrl">
+
+	<div class="col-xs-12 col-lg-6">
+
+		<div class="form-group">
+			<select
+				ng-options="option as option.name for option in dropDownOptions"
+				ng-model="selectedOption" ng-change="update()">
+			</select>
+		</div>
+
+		<div ba-panel
+			ba-panel-title="Monthly sales predictions by item profile"
+			ba-panel-class="with-scroll table-panel">
+			
+			<p>Selected: {{ selectedOption.name }}</p>
+
+			<div class="vertical-scroll">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th class="table-id">#</th>
+							<th>Categories</th>
+							<th>Sales</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in items">
+							<td class="table-id">{{item.itemProfileId}}</td>
+							<td>{{item.categories.join(" ")}}</td>
+							<td>{{item.sales}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

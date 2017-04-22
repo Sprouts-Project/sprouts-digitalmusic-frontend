@@ -8,6 +8,7 @@
   angular.module('BlurAdmin.pages', [
     'ui.router',
     'BlurAdmin.pages.dashboard',
+    'BlurAdmin.pages.operationsPanel',
   ])
       .config(routeConfig);
 
@@ -23,10 +24,10 @@
       title: 'Finance panel',
       icon: 'ion-cash',
     });
-    baSidebarServiceProvider.addStaticItem({
+    /*baSidebarServiceProvider.addStaticItem({
         title: 'Operation panel',
         icon: 'ion-ios-cog',
-      });
+      });*/
   }
 
 })();
