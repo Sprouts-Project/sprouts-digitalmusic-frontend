@@ -22,6 +22,9 @@
         }).when('/customer/show', {
             controller : 'CustomerController',
             templateUrl : '/app/view/customer/edit_profile.html'
+        }).when('/order/create', {
+            controller : 'OrderController',
+            templateUrl : '/app/view/order/create_order.html'
         }).otherwise('/');
 	} ]);
 })();

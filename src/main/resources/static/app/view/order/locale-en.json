@@ -1,0 +1,19 @@
+{
+  "order.information": "Make order",
+  "order.credit_card.information": "Information about credit card",
+  "order.cvv": "CVV",
+  "order.cvv_required": "CVV is required",
+  "order.brand": "Brand",
+  "order.brand_required": "Brand is required",
+  "order.expire": "Expire date",
+  "order.expire_with_format": "Expire date (yy/mm)",
+  "order.expire_required": "Expire date is required",
+  "order.number": "Credit card number",
+  "order.number_required": "Credit card number is required",
+  "order.address.information": "Information about address",
+  "order.address": "Address",
+  "order.address_required": "Address is required",
+  "order.create_order": "Make order",
+  "order.success": "Success!",
+  "order.success_message": "Your order has been successfully completed"
+}

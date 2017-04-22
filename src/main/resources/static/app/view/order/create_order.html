@@ -1,0 +1,97 @@
+<div class="row" ng-show="showForm">
+    <h1>{{ 'order.information' | translate}}</h1>
+    <div class="col-md-12">
+        <div class="row">
+            <h2>{{ 'order.credit_card.information' | translate }}</h2>
+            <form novalidate class="simple-form" name="orderForm">
+                <div class="form-group">
+                    <label for="cvv">{{ 'order.cvv' | translate }}</label> <input type="number"
+                                                                                  class="form-control"
+                                                                                  name="cvv"
+                                                                                  placeholder="{{ 'order.cvv' | translate }}"
+                                                                                  ng-model="orderInfo.cvv"
+                                                                                  required>
+                    <div ng-show="orderForm.$submitted || orderForm.username.$touched">
+                        <span ng-show="orderForm.username.$error.required"
+                              class="hasError">{{ 'order.cvv_required' | translate }}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="brand">{{ 'order.brand' | translate }}</label> <input type="text"
+                                                                                      class="form-control"
+                                                                                      name="brand"
+                                                                                      placeholder="{{ 'order.brand' | translate }}"
+                                                                                      ng-model="orderInfo.brand"
+                                                                                      required>
+                    <div ng-show="orderForm.$submitted || orderForm.brand.$touched">
+                        <span ng-show="orderForm.brand.$error.required"
+                              class="hasError">{{ 'order.brand_required' | translate }}</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="expire">{{ 'order.expire' | translate }}</label> <input
+                        type="text"
+                        class="form-control"
+                        name="expire"
+                        placeholder="{{ 'order.expire_with_format' | translate }}"
+                        ng-model="orderInfo.expire"
+                        required>
+                    <div ng-show="orderForm.$submitted || orderForm.password.$touched">
+                        <span ng-show="orderForm.expire.$error.required"
+                              class="hasError">{{ 'order.expire_required' | translate }}</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="number">{{ 'order.number' | translate }}</label> <input
+                        type="number"
+                        class="form-control"
+                        name="number"
+                        placeholder="{{ 'order.number' | translate }}"
+                        ng-model="orderInfo.number"
+                        required>
+                    <div ng-show="orderForm.$submitted || orderForm.password.$touched">
+                        <span ng-show="orderForm.number.$error.required"
+                              class="hasError">{{ 'order.number_required' | translate }}</span>
+                    </div>
+                </div>
+
+                <h2>{{ 'order.address.information' | translate }}</h2>
+
+                <div class="form-group">
+                    <label for="address">{{ 'order.address' | translate }}</label> <input
+                        type="text"
+                        class="form-control"
+                        name="address"
+                        placeholder="{{ 'order.address' | translate }}"
+                        ng-model="orderInfo.address"
+                        required>
+                    <div ng-show="orderForm.$submitted || orderForm.address.$touched">
+                        <span ng-show="orderForm.number.$error.required"
+                              class="hasError">{{ 'order.address_required' | translate }}</span>
+                    </div>
+                </div>
+
+                <div class="form-group align-center">
+                    <input type="submit" class="btn btn-default"
+                           ng-click="createOrder()"
+                           value="{{ 'order.create_order' | translate }}"
+                           ng-disabled="orderForm.$invalid"/>
+                </div>
+            </form>
+            <div class="alert alert-danger alert-dismissable" ng-show="error">
+                <a class="close" data-dismiss="alert" aria-label="close" ng-click="error = false">&times;</a>
+                <strong>{{ 'index.oops' | translate }}</strong> {{ 'index.error' | translate }}.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-hide="showForm">
+    <h1>{{ 'order.information' | translate}}</h1>
+    <div class="col-md-12">
+        <div class="alert alert-success alert-dismissable">
+            <strong>{{ 'order.success' | translate }}</strong> {{ 'order.success_message' | translate }}.
+        </div>
+    </div>
+</div>
