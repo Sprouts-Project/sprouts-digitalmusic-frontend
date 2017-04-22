@@ -13,5 +13,6 @@
   "index.first": "First",
   "index.last": "Last",
   "index.signup": "Sign up",
-  "index.modify_personal_data": "Modify personal data"
+  "index.modify_personal_data": "Modify personal data",
+  "index.order.list": "View orders"
 }

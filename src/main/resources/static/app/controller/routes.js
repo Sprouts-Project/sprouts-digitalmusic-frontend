@@ -25,6 +25,9 @@
         }).when('/order/create', {
             controller : 'OrderController',
             templateUrl : '/app/view/order/create_order.html'
+        }).when('/order/admin/list', {
+            controller : 'OrderAdminController',
+            templateUrl : '/app/view/order/list_orders.html'
         }).otherwise('/');
 	} ]);
 })();

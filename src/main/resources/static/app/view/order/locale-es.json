@@ -15,5 +15,10 @@
   "order.address_required": "La dirección es requerida",
   "order.create_order": "Hacer pedido",
   "order.success": "Éxito!",
-  "order.success_message": "Tu pedido se ha realizado con éxito"
+  "order.success_message": "Tu pedido se ha realizado con éxito",
+  "order.list_orders": "Pedidos",
+  "order.list_orders.id": "ID",
+  "order.list_orders.date": "Fecha",
+  "order.list_orders.deliveredDate": "Fecha de entrega",
+  "order.mark_as_delivered": "Entregar"
 }

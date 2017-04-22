@@ -15,5 +15,10 @@
   "order.address_required": "Address is required",
   "order.create_order": "Make order",
   "order.success": "Success!",
-  "order.success_message": "Your order has been successfully completed"
+  "order.success_message": "Your order has been successfully completed",
+  "order.list_orders": "Orders",
+  "order.list_orders.id": "ID",
+  "order.list_orders.date": "Date",
+  "order.list_orders.deliveredDate": "Delivered date",
+  "order.mark_as_delivered": "Deliver"
 }

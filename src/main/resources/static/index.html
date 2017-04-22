@@ -28,6 +28,7 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="#/">{{ 'index.home' | translate }}</a></li>
+						<li><a href="#/order/admin/list" ng-controller="OrderAdminController" ng-show="authority=='ADMIN'">{{ 'index.order.list' | translate }}</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#/login" ng-controller="LoginController" ng-hide="isLoggedIn">{{ 'index.login' | translate }}</a></li>
@@ -101,6 +102,7 @@
 	<script src="./app/controller/signupController.js"></script>
 	<script src="./app/controller/customerController.js"></script>
 	<script src="./app/controller/orderController.js"></script>
+	<script src="./app/controller/orderAdminController.js"></script>
 	<script src="./app/controller/apiDocController.js"></script>
 	<script src="./app/controller/itemDisplayController.js"></script>
 </body>

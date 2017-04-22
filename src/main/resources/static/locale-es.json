@@ -13,5 +13,6 @@
   "index.first": "Primera",
   "index.last": "Última",
   "index.signup": "Regístrate",
-  "index.modify_personal_data": "Modificar datos personales"
+  "index.modify_personal_data": "Modificar datos personales",
+  "index.order.list": "Ver pedidos"
 }
