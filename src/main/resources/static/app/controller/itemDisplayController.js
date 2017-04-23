@@ -2,6 +2,7 @@
 (function() {
 	var ItemDisplayController = function($scope, $http, $routeParams, AuthService) {
 		$scope.item,
+		$scope.showForm = false,
 		$scope.reviews = []
 		
 		self.doGetItem = function(id) {
@@ -38,8 +39,10 @@
 		function init() {
 			var id = $routeParams.itemId;
 			if(id>0){
+				
 				self.doGetItem(id);
 			}
+			
 		}
 		init();
 

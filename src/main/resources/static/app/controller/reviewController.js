@@ -1,14 +1,18 @@
 'use strict';
 (function() {
-	var reviewController = function($scope, $http, $routeParams, $location) {
+	var ReviewController = function($scope, $http) {
 		$scope.review,
 		$scope.error = false;
 
-		self.createReview = function() {
+		self.createReview = function(itemId) {
+			console.log("Entra");
 			$http({
 				method : 'POST',
-				url : '/review/admin/create',
+				url : '/review/create',
 				data : $scope.review,
+				params : {
+					itemId : itemId
+				},
 				headers : {
 					'Content-type' : 'application/json;charset=utf-8'
 				}
@@ -19,41 +23,11 @@
 			});
 		}
 
-		$scope.doDeleteReview = function(id, version) {
-			$http({
-				method : 'POST',
-				url : '/review/admin/delete',
-				data : {
-					id : id,
-					version : version
-				},
-				headers : {
-					'Content-type' : 'application/json;charset=utf-8'
-				}
-			}).success(function(response) {
-				$scope.error = false;
-				$location.path('/');
-			}).error(function (response) {
-				$scope.error = true;
-			});
+		$scope.doSubmit = function(itemId) {
+			self.createReview(itemId);
 		}
-
-		
-
-		$scope.doSubmit = function() {
-			self.createReview();
-		}
-
-		$scope.reset = function() {
-			$scope.item.$setPristine();
-		}
-
-		function init() {
-			
-		}
-		init();
 
 	};
 
-	angularApp.controllers.controller('reviewController', [ '$scope', '$http', '$routeParams', '$location', reviewController ]);
+	angularApp.controllers.controller('ReviewController', [ '$scope', '$http', ReviewController ]);
 })();

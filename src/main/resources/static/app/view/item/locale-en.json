@@ -12,5 +12,9 @@
 	"item.delete" : "Delete",
 	"item.edit" : "Edit",
 	"item.view" : "View",
-	"item.review" : "Leave a review"
+	"item.review" : "Leave a review",
+	"review.summary" : "Summary",
+	"review.reviewText" : "Review",
+	"review.submit" : "Submit",
+	"review.overall" : "Overall"
 }

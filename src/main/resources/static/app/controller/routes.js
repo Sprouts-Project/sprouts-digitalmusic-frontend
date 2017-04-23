@@ -13,6 +13,9 @@
 		}).when('/shoppingCart', {
 			controller : 'ShoppingCartController',
 			templateUrl : '/app/view/shoppingCart/display.html'
+		}).when('/review', {
+			controller : 'ReviewController',
+			templateUrl : '/app/view/item/display.html'
 		}).when('/apiDoc', {
 			templateUrl: 'app/view/api/api.html',
 			controller: 'ApiDocController'

@@ -12,5 +12,9 @@
 	"item.delete" : "Eliminar",
 	"item.edit" : "Editar",
 	"item.view" : "Ver",
-	"item.review" : "Hacer una valoración"
+	"item.review" : "Hacer una valoración",
+	"review.summary" : "Resumen",
+	"review.reviewText" : "Opinión",
+	"review.submit" : "Subir",
+	"review.overall" : "Total"
 }
