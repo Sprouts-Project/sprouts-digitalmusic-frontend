@@ -11,5 +11,6 @@
 	"item.add_shoppingcart" : "Add to shopping cart",
 	"item.delete" : "Delete",
 	"item.edit" : "Edit",
-	"item.view" : "View"
+	"item.view" : "View",
+	"item.review" : "Leave a review"
 }

@@ -1,6 +1,6 @@
 {
-	"item.title": "TÌtulo",
-	"item.description": "DescripciÛn",
+	"item.title": "T√≠tulo",
+	"item.description": "Descripci√≥n",
 	"item.brand" : "Marca",
 	"item.price" : "Precio",
 	"item.imUrl" : "Url de la imagen",
@@ -8,8 +8,9 @@
 	"item.submit" : "Subir",
 	"index.oops" : "Oh oh",
 	"index.error" : "Error",
-	"item.add_shoppingcart" : "AÒadir al carrito",
+	"item.add_shoppingcart" : "A√±adir al carrito",
 	"item.delete" : "Eliminar",
 	"item.edit" : "Editar",
-	"item.view" : "Ver"
+	"item.view" : "Ver",
+	"item.review" : "Hacer una valoraci√≥n"
 }

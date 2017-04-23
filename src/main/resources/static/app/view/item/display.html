@@ -1,29 +1,41 @@
+<div class="row">
 
-<div class="thumbnail">
-	<img class="group list-group-image" src="{{item.imUrl}}"
-		alt="{{item.title}}" height="300px" />
-	<div class="caption">
-		<h4 class="group inner list-group-item-heading">{{item.title}}</h4>
-		<p class="group inner list-group-item-text">{{item.description}}</p>
-		<div class="row">
-			<div class="col-xs-12 col-md-6">
-				<p class="lead">$ {{item.price}}</p>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="products" class="row list-group">
-	<div class="item  col-xs-4 col-lg-4" ng-repeat="review in reviews">
 		<div class="thumbnail">
-			<div class="caption">
-				<h4 class="group inner list-group-item-heading">
-					{{review.date}}</h4>
-				<p class="group inner list-group-item-text">
-					{{review.reviewText}}</p>
+			<img class="img-responsive" src="{{item.imUrl}}" alt="{{item.brand}}">
+			<div class="caption-full">
+				<h4 class="pull-right">${{item.price}}</h4>
+				<h4><a href="#">{{item.title}}</a>
+				</h4>
+				<p>{{item.description}}</p>
 			</div>
 		</div>
-	</div>
-</div>
 
+		<div class="well">
+
+			<div class="text-right">
+				<a class="btn btn-success">{{ 'item.review' | translate }}</a>
+			</div>
+
+			<hr>
+
+			<div class="row" ng-repeat="review in reviews">
+				<div class="col-md-12">
+					<h3>{{review.summary}}</h3>
+					<i class="material-icons">grade</i> {{review.overall}}/5
+					<br>
+					<i class="material-icons">thumb_up</i> {{review.helpful}}
+					<br>
+					<i class="material-icons">thumb_down</i> {{review.unhelpful}}
+					<br>
+					<strong>{{review.customer.name}}</strong>
+					<span class="pull-right">{{review.date | date:'yyyy-MM-dd'}}</span>
+					<p>{{review.reviewText}}</p>
+				</div>
+
+				<hr>
+			</div>
+		</div>
+
+</div>
 
 
