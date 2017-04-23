@@ -38,17 +38,17 @@
     	      color: pieColor,
     	      description: 'Average age',
     	      stats: parseFloat(response.data.average_age).toFixed(2),
-    	      icon: 'person',
+    	      //icon: 'person',
     	    }, {
     	      color: pieColor,
     	      description: 'Female average age',
     	      stats: parseFloat(response.data.average_age_female).toFixed(2),
-    	      icon: 'money',
+    	      //icon: 'money',
     	    }, {
     	      color: pieColor,
     	      description: 'Male average age',
     	      stats: parseFloat(response.data.average_age_male).toFixed(2),
-    	      icon: 'face',
+    	      //icon: 'face',
     	    }
     	  ];
     	

@@ -5,22 +5,22 @@
 	'use strict';
 
 	angular.module('BlurAdmin.pages.customersPanel').controller(
-			'CustomerSegmentationAgeAndBrandCtrl',
-			CustomerSegmentationAgeAndBrandCtrl);
+			'CustomerSegmentationAgeAndItemProfileCtrl',
+			CustomerSegmentationAgeAndItemProfileCtrl);
 
 	/** @ngInject */
-	function CustomerSegmentationAgeAndBrandCtrl($scope, $http,
+	function CustomerSegmentationAgeAndItemProfileCtrl($scope, $http,
 			orderByFilter, baConfig) {
 		var layoutColors = baConfig.colors;
 
-		$http.get('/dashboard/customer-segmentation-age-and-brand').then(
+		$http.get('/dashboard/customer-segmentation-age-and-item-profile').then(
 				function(response) {
 					var dataArr = orderByFilter(response.data, "number_customers", true)
-					$scope.items = dataArr;
+					$scope.itemsip = dataArr;
 					setChartData(dataArr);
 				});
 
-		$scope.options = {
+		$scope.optionsip = {
 			elements : {
 				arc : {
 					borderWidth : 0
@@ -43,8 +43,8 @@
 				labels.push(dataArr[j].profile_id);
 				data.push(dataArr[j].number_customers);
 			}
-			$scope.labels = labels;
-			$scope.data = data;
+			$scope.labelsip = labels;
+			$scope.dataip = data;
 		}
 	}
 
