@@ -35,11 +35,26 @@
 				$scope.error = true;
 			});
 		}
+		
+		self.doIBoughtIt = function(id) {
+			$http({
+				method : 'GET',
+				url : '/item/itemBoughtByCostumer',
+				params : {
+					itemId : id
+				}
+			}).success(function(response) {
+				$scope.showForm=response;
+				$scope.error = false;
+			}).error(function (response) {
+				$scope.error = true;
+			});
+		}
 
 		function init() {
 			var id = $routeParams.itemId;
 			if(id>0){
-				
+				self.doIBoughtIt(id);
 				self.doGetItem(id);
 			}
 			
