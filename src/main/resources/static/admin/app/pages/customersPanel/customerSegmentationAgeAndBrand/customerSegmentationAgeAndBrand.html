@@ -1,0 +1,29 @@
+
+<div class="col-xs-12 col-lg-12" ba-panel
+	ba-panel-title="Customer segmentation by age and brand"
+	ba-panel-class="with-scroll">
+
+	<div class="hidden-xs">
+		<canvas id="pie" class="chart chart-doughnut" chart-options="options"
+			chart-data="data" chart-labels="labels" height="100">
+                </canvas>
+	</div>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th class="table-id">#</th>
+				<th>Age interval</th>
+				<th>Brands</th>
+				<th>Number of customers</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in items">
+				<td class="table-id">{{item.profile_id}}</td>
+				<td>{{item.age_interval}}</td>
+				<td>{{item.brands.join(", ")}}</td>
+				<td>{{item.number_customers}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

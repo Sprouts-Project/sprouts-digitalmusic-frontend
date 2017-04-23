@@ -8,6 +8,7 @@
   angular.module('BlurAdmin.pages', [
     'ui.router',
     'BlurAdmin.pages.dashboard',
+    'BlurAdmin.pages.customersPanel',
     'BlurAdmin.pages.operationsPanel',
   ])
       .config(routeConfig);
@@ -16,10 +17,10 @@
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
     $urlRouterProvider.otherwise('/dashboard');
 
-    baSidebarServiceProvider.addStaticItem({
+    /*baSidebarServiceProvider.addStaticItem({
       title: 'Customers panel',
       icon: 'ion-person',
-    });
+    });*/
     baSidebarServiceProvider.addStaticItem({
       title: 'Finance panel',
       icon: 'ion-cash',

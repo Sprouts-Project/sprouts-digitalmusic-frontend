@@ -9,9 +9,7 @@
 			MonthlySalesPredictionsByItemProfileCtrl);
 
 	/** @ngInject */
-	function MonthlySalesPredictionsByItemProfileCtrl($element, $scope, $http,
-			orderByFilter, baConfig, layoutPaths) {
-		var layoutColors = baConfig.colors;
+	function MonthlySalesPredictionsByItemProfileCtrl($scope, $http) {
 
 		$http.get('/dashboard/sales-predictions-by-item-profiles').then(
 				function(response) {
@@ -34,12 +32,11 @@
 						return new Date(a.year, a.month, 1)
 								- new Date(b.year, b.month, 1);
 					});
-					
+
 					$scope.selectedOption = options[0];
 					setChartData(options[0].itemProfiles);
-					
-				});
 
+				});
 
 		function setChartData(itemProfiles) {
 			$scope.items = itemProfiles;
