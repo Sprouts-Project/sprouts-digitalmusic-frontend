@@ -11,7 +11,7 @@ eureka:
 
 # HTTP Server
 server:
-  port: 8081   # HTTP (Tomcat) port
+  port: 8080   # HTTP (Tomcat) port
 
 zuul:
   routes:
