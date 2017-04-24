@@ -30,6 +30,9 @@ angularApp.config(['$translateProvider', function ($translateProvider) {
         }, {
             prefix: '/app/view/order/locale-',
             suffix: '.json'
+        }, {
+            prefix: '/app/view/homePage/locale-',
+            suffix: '.json'
         }
         ]
     });
