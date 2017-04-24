@@ -66,3 +66,7 @@ zuul:
       path: /order/*
       url: http://localhost:2222/order
       sensitive-headers: Cookie,Set-Cookie
+    recommender:
+      path: /recommender/*
+      url: http://localhost:2222/recommender
+      sensitive-headers: Cookie,Set-Cookie

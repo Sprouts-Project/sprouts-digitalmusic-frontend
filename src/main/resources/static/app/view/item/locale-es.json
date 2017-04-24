@@ -16,5 +16,6 @@
 	"review.summary" : "Resumen",
 	"review.reviewText" : "Opinión",
 	"review.submit" : "Subir",
-	"review.overall" : "Total"
+	"review.overall" : "Total",
+	"recommender.alsoBought": "Otros clientes que compraron este producto también compraron..."
 }
