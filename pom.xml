@@ -2,12 +2,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sprouts.digitalmusic-frontend</groupId>
   <artifactId>sprouts-digitalmusic-frontend</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1</version>
   
   <repositories>
 		<repository>
 			<id>nexus</id>
-			<url>http://nexus.sprouts-project.com:8081</url>
+			<url>http://nexus.sprouts-project.com:8081/repository/maven-releases</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -33,7 +33,7 @@
 	<parent>
 		<groupId>org.sprouts.digitalmusic</groupId>
 		<artifactId>sprouts-digitalmusic</artifactId>
-		<version>0.1</version>
+		<version>0.2</version>
 	</parent>
   
   <dependencies>
