@@ -15,6 +15,6 @@
 	"item.review" : "Hacer una valoración",
 	"review.summary" : "Resumen",
 	"review.reviewText" : "Opinión",
-	"review.submit" : "Subir",
-	"review.overall" : "Total"
+	"review.submit" : "Enviar",
+	"review.overall" : "Valoración"
 }

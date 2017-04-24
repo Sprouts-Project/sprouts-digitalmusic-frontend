@@ -5,7 +5,6 @@
 		$scope.error = false;
 
 		self.createReview = function(itemId) {
-			console.log("Entra");
 			$http({
 				method : 'POST',
 				url : '/review/create',
