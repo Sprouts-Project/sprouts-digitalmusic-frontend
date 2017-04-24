@@ -16,6 +16,6 @@
 	"review.summary" : "Summary",
 	"review.reviewText" : "Review",
 	"review.submit" : "Submit",
-	"review.overall" : "Overall",
-	"recommender.alsoBought": "Other customers who bought this item also bought..."
+	"recommender.alsoBought": "Other customers who bought this item also bought...",
+	"review.overall" : "Rating"
 }
