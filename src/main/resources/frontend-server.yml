@@ -7,7 +7,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka.sprouts-project.com:8761/eureka/
 
 # HTTP Server
 server:
@@ -17,56 +17,56 @@ zuul:
   routes:
     item:
       path: /item/*
-      url: http://localhost:2222/item
+      url: http://eureka.sprouts-project.com:2222/item
       sensitive-headers: Cookie,Set-Cookie
     item-Admin:
       path: /item/admin/*
-      url: http://localhost:2222/item/admin
+      url: http://eureka.sprouts-project.com:2222/item/admin
       sensitive-headers: Cookie,Set-Cookie  
     review:
       path: /review/*
-      url: http://localhost:2222/review
+      url: http://eureka.sprouts-project.com:2222/review
       sensitive-headers: Cookie,Set-Cookie  
     shoppingCart:
       path: /shoppingCart/*
-      url: http://localhost:2222/shoppingCart
+      url: http://eureka.sprouts-project.com:2222/shoppingCart
       sensitive-headers: Cookie,Set-Cookie  
     category:
       path: /category/*
-      url: http://localhost:2222/category
+      url: http://eureka.sprouts-project.com:2222/category
       sensitive-headers: Cookie,Set-Cookie
     auth:
       path: /oauth/*
-      url: http://localhost:2222/oauth
+      url: http://eureka.sprouts-project.com:2222/oauth
       sensitive-headers: Cookie,Set-Cookie
     authority:
       path: /authority/*
-      url: http://localhost:2222/authority
+      url: http://eureka.sprouts-project.com:2222/authority
       sensitive-headers: Cookie,Set-Cookie
     api:
       path: /v2/*
-      url: http://localhost:2222/v2
+      url: http://eureka.sprouts-project.com:2222/v2
       sensitive-headers: Cookie,Set-Cookie
     item-api:
       path: /v2/item/*
-      url: http://localhost:2222/item
+      url: http://eureka.sprouts-project.com:2222/item
       sensitive-headers: Cookie,Set-Cookie
     dashboard:
       path: /dashboard/*
-      url: http://localhost:2222/dashboard
+      url: http://eureka.sprouts-project.com:2222/dashboard
     customer:
       path: /customer/*
-      url: http://localhost:2222/customer
+      url: http://eureka.sprouts-project.com:2222/customer
       sensitive-headers: Cookie,Set-Cookie
     order-admin:
       path: /order/admin/*
-      url: http://localhost:2222/order/admin
+      url: http://eureka.sprouts-project.com:2222/order/admin
       sensitive-headers: Cookie,Set-Cookie
     order:
       path: /order/*
-      url: http://localhost:2222/order
+      url: http://eureka.sprouts-project.com:2222/order
       sensitive-headers: Cookie,Set-Cookie
     recommender:
       path: /recommender/*
-      url: http://localhost:2222/recommender
+      url: http://eureka.sprouts-project.com:2222/recommender
       sensitive-headers: Cookie,Set-Cookie
