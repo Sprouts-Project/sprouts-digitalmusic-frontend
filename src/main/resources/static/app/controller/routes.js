@@ -2,6 +2,9 @@
 (function() {
 	angularApp.controllers.config([ '$routeProvider', function($routeProvider) {
 		$routeProvider.when('/', {
+            controller : 'ItemController',
+            templateUrl : '/app/view/item/items.html'
+        }).when('/item/list', {
 			controller : 'ItemController',
 			templateUrl : '/app/view/item/items.html'
 		}).when('/login', {

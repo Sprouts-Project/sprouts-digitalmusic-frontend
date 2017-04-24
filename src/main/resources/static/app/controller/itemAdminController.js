@@ -27,6 +27,7 @@
 				}
 			}).success(function(response) {
 				$scope.error = false;
+                $location.path('/item/list');
 			}).error(function(response) {
 				$scope.errors = true;
 			});
@@ -45,7 +46,7 @@
 				}
 			}).success(function(response) {
 				$scope.error = false;
-				$location.path('/');
+				$location.path('/item/list');
 			}).error(function (response) {
 				$scope.error = true;
 			});

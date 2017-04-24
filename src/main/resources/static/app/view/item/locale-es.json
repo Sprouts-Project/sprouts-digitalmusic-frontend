@@ -13,6 +13,7 @@
 	"item.edit" : "Editar",
 	"item.view" : "Ver",
 	"item.review" : "Hacer una valoración",
+	"item.reviewAvg" : "Valoración media",
 	"review.summary" : "Resumen",
 	"review.reviewText" : "Opinión",
 	"review.submit" : "Enviar",

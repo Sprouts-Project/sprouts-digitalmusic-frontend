@@ -49,7 +49,7 @@ angularApp.config(['$httpProvider', function ($httpProvider) {
                 if ($cookies.get("access_token")) {
 
                     httpConfig.headers['Authorization'] = 'Bearer ' + $cookies.get("access_token");
-                    
+
                 }
 
                 return httpConfig;
@@ -69,7 +69,7 @@ angularApp.controller('languageController', ['$translate', '$scope',
         };
     }]);
 
-angularApp.service('AuthService', ['$http', function($http) {
+angularApp.service('AuthService', ['$http', function ($http) {
     var $cookies;
     angular.injector(['ngCookies']).invoke(['$cookies', function (_$cookies_) {
         $cookies = _$cookies_;
@@ -83,7 +83,7 @@ angularApp.service('AuthService', ['$http', function($http) {
         return authority;
     };
 
-    this.logout = function(){
+    this.logout = function () {
         $http.get("/oauth/revoke").then(function () {
             $cookies.remove("authority");
             $cookies.remove("access_token");

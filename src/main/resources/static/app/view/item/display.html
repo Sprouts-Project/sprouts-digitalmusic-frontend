@@ -2,12 +2,20 @@
 
 		<div class="thumbnail">
 			<img class="img-responsive" src="{{item.imUrl}}" alt="{{item.brand}}">
-			<div class="caption-full">
-				<h4 class="pull-right">${{item.price}}</h4>
-				<h4><a href="#">{{item.title}}</a>
-				</h4>
-				<p>{{item.description}}</p>
+			<h1><a href="#/item/display?itemId={{item.id}}">{{item.title}}</a></h1>
+			<h3 class="pull-left">{{item.brand}}</h3>
+			<h3 class="text-success pull-right">${{item.price}}</h3>
+			<br><br><br>
+			<div class="col-xs-12 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn">
+				<a class="btn btn-info" ng-click="doAddItem(item.id)" ng-controller="ShoppingCartController">{{ 'item.add_shoppingcart' | translate }} <span class="glyphicon glyphicon-shopping-cart"></span></a>
 			</div>
+			<br><br>
+			<hr>
+			<div id="avgRating" ng-show="average > 0">
+				<h4 class="text-info"><strong>{{ 'item.reviewAvg' | translate }}:</strong> {{average | number : 2}}/5</h4>
+				<hr>
+			</div>
+			<p>{{item.description}}</p>
 		</div>
 		
 		<div class="thumbnail" ng-show="recommends.length">
@@ -30,13 +38,12 @@
 							</div>
 								<div class="row">
 									<div class="col-xs-12 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn">
-										<a class="btn btn-info" ng-click="doAddItem(item.item_id)" ng-controller="ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+										<a class="btn btn-info" ng-click="doAddItem(item.id)" ng-controller="ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span></a>
 									</div>
 									<div class="col-xs-12 col-md-6">
-										<a class="btn btn-success" href="#/item/display?itemId={{item.item_id}}" >{{ 'item.view' | translate }}</a>
+										<a class="btn btn-success" href="#/item/display?itemId={{item.id}}" >{{ 'item.view' | translate }}</a>
 									</div>
 								</div>
-								
 							</div>
 						</div>
 					</div>

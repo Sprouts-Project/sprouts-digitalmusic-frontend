@@ -13,6 +13,7 @@
 	"item.edit" : "Edit",
 	"item.view" : "View",
 	"item.review" : "Leave a review",
+	"item.reviewAvg" : "Average rating",
 	"review.summary" : "Summary",
 	"review.reviewText" : "Review",
 	"review.submit" : "Submit",

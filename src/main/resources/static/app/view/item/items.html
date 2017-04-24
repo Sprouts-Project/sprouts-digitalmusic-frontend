@@ -1,23 +1,25 @@
 <div class="container">
 	<div id="products" class="row list-group">
-		<div class="item  col-xs-4 col-lg-4" ng-repeat="item in items">
+		<div class="item col-xs-12 col-md-4 col-lg-2" ng-repeat="item in items">
 			<div class="thumbnail">
-				<img class="group list-group-image" src="{{item.imUrl}}"
-					alt="{{item.title}}" height="300px"/>
+				<img class="group list-group-image card-img" src="{{item.imUrl}}"
+					 alt="{{item.title}}" height="300px"/>
 				<div class="caption">
-					<h4 class="group inner list-group-item-heading">
-						{{item.title}}</h4>
-					<p class="group inner list-group-item-text">
-						{{item.description}}</p>
+					<div class="card-height">
+						<h5 class="group inner list-group-item-heading"><strong>
+							<a href="#/item/display?itemId={{item.id}}">{{item.title}}</a></strong></h5>
+						<div class="row">
+							<div class="col-xs-12 col-md-6">
+								<p>{{item.brand}}</p>
+							</div>
+						</div>
+					</div>
+					<div>
+						<h4 class="text-success">${{item.price}}</h4>
+					</div>
 					<div class="row">
-						<div class="col-xs-12 col-md-6">
-							<p class="lead">$ {{item.price}}</p>
-						</div>
 						<div class="col-xs-12 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn">
-							<a class="btn btn-info" ng-click="doAddItem(item.id)" ng-controller="ShoppingCartController">{{ 'item.add_shoppingcart' | translate }}</a>
-						</div>
-						<div class="col-xs-12 col-md-6">
-							<a class="btn btn-success" href="#/item/admin?itemId={{item.id}}" ng-controller="LoginController" ng-show="authority=='ADMIN'">{{ 'item.edit' | translate }}</a>
+							<a class="btn btn-info" ng-click="doAddItem(item.id)" ng-controller="ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span></a>
 						</div>
 						<div class="col-xs-12 col-md-6">
 							<a class="btn btn-success" href="#/item/display?itemId={{item.id}}" >{{ 'item.view' | translate }}</a>
@@ -28,8 +30,7 @@
 		</div>
 	</div>
 </div>
-
-<ul class="pagination">
+<ul class="pagination" ng-controller="ItemController">
 	<li><a ng-click="reloadPaginated(0)">{{ 'index.first' |
 			translate }}</a></li>
 	<li ng-repeat="i in range()"
