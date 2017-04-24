@@ -1,0 +1,28 @@
+<div class="row pie-charts">
+  <div class="pie-chart-item-container" ng-repeat="chart in charts">
+    <div ba-panel>
+      <div class="pie-chart-item">
+        <div class="description">
+          <div>{{ ::chart.description }}</div>
+          <div class="description-stats">{{ ::chart.stats }}</div>
+        </div>
+        <i class="chart-icon i-{{ ::chart.icon }}"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6 col-md-12 col-sm-12"
+       ba-panel
+       ba-panel-title="Average age by state"
+       ba-panel-class="medium-panel">
+		<div id="amChartMap"></div>
+	</div>
+ 	<div class="col-lg-6 col-md-12 col-sm-12"
+       ba-panel
+       ba-panel-title="Customers by State"
+       ba-panel-class="medium-panel">
+		<div id="amChartMap2"></div>
+	</div>
+</div>

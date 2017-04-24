@@ -13,10 +13,22 @@ angularApp.config(['$translateProvider', function ($translateProvider) {
             prefix: '/app/view/item/locale-',
             suffix: '.json'
         }, {
+            prefix: '/app/view/shoppingCart/locale-',
+            suffix: '.json'
+        }, {
             prefix: '/app/view/api/locale-',
             suffix: '.json'
         }, {
             prefix: '/app/view/login/locale-',
+            suffix: '.json'
+        }, {
+            prefix: '/app/view/signup/locale-',
+            suffix: '.json'
+        }, {
+            prefix: '/app/view/customer/locale-',
+            suffix: '.json'
+        }, {
+            prefix: '/app/view/order/locale-',
             suffix: '.json'
         }
         ]
@@ -37,7 +49,7 @@ angularApp.config(['$httpProvider', function ($httpProvider) {
                 if ($cookies.get("access_token")) {
 
                     httpConfig.headers['Authorization'] = 'Bearer ' + $cookies.get("access_token");
-                    
+
                 }
 
                 return httpConfig;
@@ -56,3 +68,27 @@ angularApp.controller('languageController', ['$translate', '$scope',
             $translate.use(langKey);
         };
     }]);
+
+angularApp.service('AuthService', ['$http', function ($http) {
+    var $cookies;
+    angular.injector(['ngCookies']).invoke(['$cookies', function (_$cookies_) {
+        $cookies = _$cookies_;
+    }]);
+
+    this.getAuthority = function () {
+        var authority = null;
+        if ($cookies.get("access_token") && $cookies.get("authority")) {
+            authority = $cookies.get("authority");
+        }
+        return authority;
+    };
+
+    this.logout = function () {
+        $http.get("/oauth/revoke").then(function () {
+            $cookies.remove("authority");
+            $cookies.remove("access_token");
+            window.location.replace('/');
+        });
+    };
+
+}]);

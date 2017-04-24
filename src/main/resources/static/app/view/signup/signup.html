@@ -1,0 +1,112 @@
+<div class="row">
+    <div class="col-md-6">
+        <h2>{{ 'signup.customer.information' | translate }}</h2>
+        <div class="row-fluid">
+            <form novalidate class="simple-form" name="customerForm">
+                <div class="form-group">
+                    <label for="name">{{ 'signup.name' | translate }}</label> <input type="text"
+                                                                                     class="form-control"
+                                                                                     name="name"
+                                                                                     placeholder="{{ 'signup.name' | translate }}"
+                                                                                     ng-model="customerInfo.name"
+                                                                                     required>
+                    <div ng-show="customerForm.$submitted || customerForm.name.$touched">
+                        <span ng-show="customerForm.name.$error.required"
+                              class="hasError">{{ 'signup.name_required' | translate }}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">{{ 'signup.email' | translate }}</label> <input type="email"
+                                                                                       class="form-control"
+                                                                                       name="email"
+                                                                                       placeholder="{{ 'signup.email' | translate }}"
+                                                                                       ng-model="customerInfo.email"
+                                                                                       required>
+                    <div ng-show="customerForm.$submitted || customerForm.email.$touched">
+                        <span ng-show="customerForm.email.$error.required"
+                              class="hasError">{{ 'signup.email_required' | translate }}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthdate">{{ 'signup.birthDate' | translate }}</label> <input type="date"
+                                                                                               class="form-control"
+                                                                                               name="birthdate"
+                                                                                               placeholder="{{ 'signup.birthDate' | translate }}"
+                                                                                               ng-model="customerInfo.birthdate"
+                                                                                               required>
+                    <div ng-show="customerForm.$submitted || customerForm.birthdate.$touched">
+                        <span ng-show="customerForm.birthdate.$error.required"
+                              class="hasError">{{ 'signup.birthDate_required' | translate }}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="state">{{ 'signup.state' | translate }}</label> <input type="text"
+                                                                                       class="form-control"
+                                                                                       name="state"
+                                                                                       placeholder="{{ 'signup.state' | translate }}"
+                                                                                       ng-model="customerInfo.state"
+                                                                                       required>
+                    <div ng-show="customerForm.$submitted || customerForm.state.$touched">
+                        <span ng-show="customerForm.state.$error.required"
+                              class="hasError">{{ 'signup.state_required' | translate }}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sex">{{ 'signup.sex' | translate }}</label>
+                    <div class="radio">
+                        <label> <input type="radio" name="sex"
+                                       id="sexM" value="M" ng-model="customerInfo.sex" checked/>
+                            {{ 'signup.sex.male' | translate }}
+                        </label> <label> <input type="radio" name="sex"
+                                                id="sexF" value="F" ng-model="customerInfo.sex"/> {{ 'signup.sex.female'
+                        |
+                        translate }}
+                    </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h2>{{ 'signup.user_account.information' | translate }}</h2>
+        <div class="row-fluid">
+            <form novalidate class="simple-form" name="userAccountForm">
+                <div class="form-group">
+                    <label for="username">{{ 'signup.username' | translate }}</label> <input type="text"
+                                                                                             class="form-control"
+                                                                                             name="username"
+                                                                                             placeholder="{{ 'signup.username' | translate }}"
+                                                                                             ng-model="userAccountInfo.username"
+                                                                                             required>
+                    <div ng-show="userAccountForm.$submitted || userAccountForm.username.$touched">
+                        <span ng-show="userAccountForm.username.$error.required"
+                              class="hasError">{{ 'signup.username_required' | translate }}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">{{ 'signup.password' | translate }}</label> <input type="password"
+                                                                                             class="form-control"
+                                                                                             name="password"
+                                                                                             placeholder="{{ 'signup.password' | translate }}"
+                                                                                             ng-model="userAccountInfo.password"
+                                                                                             required>
+                    <div ng-show="userAccountForm.$submitted || userAccountForm.password.$touched">
+                        <span ng-show="userAccountForm.password.$error.required"
+                              class="hasError">{{ 'signup.password_required' | translate }}</span>
+                    </div>
+                </div>
+
+                <div class="form-group align-center">
+                    <input type="submit" class="btn btn-default"
+                           ng-click="signup()"
+                           value="{{ 'signup.submit' | translate }}"
+                           ng-disabled="customerForm.$invalid || userAccountForm.$invalid"/>
+                </div>
+            </form>
+            <div class="alert alert-danger alert-dismissable" ng-show="error">
+                <a class="close" data-dismiss="alert" aria-label="close" ng-click="error = false">&times;</a>
+                <strong>{{ 'index.oops' | translate }}</strong> {{ 'index.error' | translate }}.
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="row"
+	ng-controller="ItemProfilesCtrl">
+	<div class="col-xs-12 col-lg-12">
+
+		<div ba-panel
+			ba-panel-title="Item profiles"
+			ba-panel-class="with-scroll table-panel">
+
+			<div class="vertical-scroll">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th class="table-id">#</th>
+							<th>Categories</th>
+							<th>Number of items</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in items">
+							<td class="table-id">{{item.profile_id}}</td>
+							<td>{{item.categories.join(", ")}}</td>
+							<td>{{ item.number_items }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

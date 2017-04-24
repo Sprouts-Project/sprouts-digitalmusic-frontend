@@ -3,8 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <title>sprouts-digitalmusic</title>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<link href="webjars/angular-swagger-ui/0.4.0/dist/css/swagger-ui.min.css" rel="stylesheet" >
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="webjars/angular-swagger-ui/0.4.0/dist/css/swagger-ui.min.css"
+	rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		  rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -24,14 +30,21 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="#/">{{ 'index.home' | translate }}</a></li>
-						<li><a href="#/login">{{ 'index.login' | translate }}</a></li>
-						<li><a href="#" ng-controller="LoginController" ng-click="logout()">{{ 'index.logout' | translate }}</a></li>
+						<li><a href="#/item/list">{{ 'index.catalog' | translate }}</a></li>
+						<li><a href="#/order/admin/list" ng-controller="OrderAdminController" ng-show="authority=='ADMIN'">{{ 'index.order.list' | translate }}</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#/login" ng-controller="LoginController" ng-hide="isLoggedIn">{{ 'index.login' | translate }}</a></li>
+						<li><a href="#/signup" ng-controller="LoginController" ng-hide="isLoggedIn">{{ 'index.signup' | translate }}</a></li>
+						<li><a href="#/shoppingCart?loadItems=1" ng-controller="LoginController" ng-show="isLoggedIn">{{ 'index.shoppingCart' | translate }}</a></li>
+						<li><a href="#/customer/show" ng-controller="LoginController" ng-show="isLoggedIn">{{ 'index.modify_personal_data' | translate }}</a></li>
+						<li><a href="#" ng-controller="LoginController" ng-click="logout()" ng-show="isLoggedIn">{{ 'index.logout' | translate }}</a></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
 			</div>
 		</nav>
-		
+
 		<div class="container">
 			<div ng-view="" class="view-content"></div>
 		</div>
@@ -42,19 +55,28 @@
 			<div class="row">
 				<div class="col-md-4">
 					<h4>sprouts-core</h4>
-					<img src="img/sprouts-white.png" height="80"/>
+					<img src="img/sprouts-white.png" height="80" />
 					<p>&copy Sprouts Framework</p>
 				</div>
 				<div class="col-md-4">
 					<h4>{{ 'index.source_code' | translate }}</h4>
-					<a href="https://github.com/jjxp/sprouts-core/"><img src="img/github-white.png" height="50"/></a>
-					<br><br>
-					<p>{{ 'index.apidocs_1' | translate }} <a href="#/apiDoc">{{ 'index.apidocs_2' | translate }}</a> {{ 'index.apidocs_3' | translate }}</p>
+					<a href="https://github.com/sprouts-project/"><img
+						src="img/github-white.png" height="50" /></a> <br>
+					<br>
+					<p>
+						{{ 'index.apidocs_1' | translate }} <a href="#/apiDoc">{{
+							'index.apidocs_2' | translate }}</a> {{ 'index.apidocs_3' | translate
+						}}
+					</p>
 				</div>
 				<div class="col-md-4" ng-controller="languageController">
 					<h4>{{ 'index.language' | translate }}</h4>
-					<img ng-click="changeLanguage('en')" src="https://image.flaticon.com/icons/svg/197/197374.svg" width="25" class="language"/>  
-					<img ng-click="changeLanguage('es')" src="https://image.flaticon.com/icons/svg/197/197593.svg" width="25" class="language"/>
+					<img ng-click="changeLanguage('en')"
+						src="https://image.flaticon.com/icons/svg/197/197374.svg"
+						width="25" class="language" /> <img
+						ng-click="changeLanguage('es')"
+						src="https://image.flaticon.com/icons/svg/197/197593.svg"
+						width="25" class="language" />
 				</div>
 			</div>
 		</div>
@@ -65,18 +87,31 @@
 	<script type="text/javascript"
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
 	<script type="text/javascript"
-			src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.js"></script>
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.js"></script>
 	<script type="text/javascript"
-			src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.js"></script>
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.js"></script>
 	<script type="text/javascript"
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-sanitize.js"></script>
-	<script src="webjars/angular-swagger-ui/0.4.0/dist/scripts/swagger-ui.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.13.1/angular-translate.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.13.1/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+	<script
+		src="webjars/angular-swagger-ui/0.4.0/dist/scripts/swagger-ui.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.13.1/angular-translate.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.13.1/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
 	<script src="./app/app.js"></script>
 	<script src="./app/controller/routes.js"></script>
 	<script src="./app/controller/itemController.js"></script>
+	<script src="./app/controller/itemAdminController.js"></script>
 	<script src="./app/controller/loginController.js"></script>
+	<script src="./app/controller/signupController.js"></script>
+	<script src="./app/controller/customerController.js"></script>
+	<script src="./app/controller/orderController.js"></script>
+	<script src="./app/controller/orderAdminController.js"></script>
 	<script src="./app/controller/apiDocController.js"></script>
+	<script src="./app/controller/itemDisplayController.js"></script>
+	<script src="./app/controller/shoppingCartController.js"></script>
+	<script src="./app/controller/reviewController.js"></script>
+	
+	
 </body>
 </html>

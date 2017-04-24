@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>{{ 'shoppingCart.display' | translate }}</h2>
+    <div id="products" class="row list-group">
+        <div class="alert alert-info alert-dismissable" ng-show="!items.length">
+            <a class="close" data-dismiss="alert" aria-label="close"
+               ng-click="error = false">&times;</a><strong>{{ 'shoppingCart.empty' | translate }}</strong>
+        </div>
+        <div class="item  col-xs-4 col-lg-4" ng-repeat="item in items">
+            <div class="thumbnail">
+                <img class="group list-group-image" src="{{item.imUrl}}"
+                     alt="{{item.title}}" height="300px"/>
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        <a href="#/item/display?itemId={{item.id}}">{{item.title}}</a></h4>
+                    <p class="group inner list-group-item-text">
+                        {{item.description}}</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">$ {{item.price}}</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-danger" ng-click="doDeleteItem(item.id)">{{ 'shoppingCart.remove' |
+                                translate }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a class="btn btn-danger" ng-click="doClear()">{{ 'shoppingCart.clear' |
+    translate }}</a>
+
+
+<div class="alert alert-danger alert-dismissable" ng-show="error">
+    <a class="close" data-dismiss="alert" aria-label="close"
+       ng-click="error = false">&times;</a> <strong>{{ 'index.oops'
+    | translate }}</strong> {{ 'index.error' | translate }}.
+</div>

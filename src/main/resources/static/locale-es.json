@@ -5,9 +5,15 @@
   "index.apidocs_2": "documentación de nuestra API",
   "index.apidocs_3": "también!",
   "index.language": "Lenguaje",
-  "index.cars": "Coches",
+  "index.catalog": "Catálogo de productos",
   "index.oops": "Ups!",
   "index.error": "Parece que algo va mal",
   "index.login": "Login",
-  "index.logout": "Logout"
+  "index.logout": "Logout",
+  "index.first": "Primera",
+  "index.last": "Última",
+  "index.signup": "Regístrate",
+  "index.modify_personal_data": "Modificar datos personales",
+  "index.order.list": "Ver pedidos",
+  "index.shoppingCart" : "Mi carrito de la compra"
 }

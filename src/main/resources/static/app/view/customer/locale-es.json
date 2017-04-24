@@ -1,0 +1,7 @@
+{
+  "customer.confirm_password": "Contraseña actual",
+  "customer.confirm_password_required": "La contraseña actual es requerida",
+  "customer.edit_data": "Modificar información",
+  "customer.edit_data_warning": "¡Aviso!",
+  "customer.edit_data_warning_message": "Se cerrará la sesión tras la modificación de los datos"
+}

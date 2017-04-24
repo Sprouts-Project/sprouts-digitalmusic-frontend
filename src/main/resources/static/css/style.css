@@ -26,3 +26,20 @@ footer {
 img.language {
 	cursor:pointer;
 }
+
+.pagination li {
+	cursor:pointer;
+}
+
+.align-center {
+	text-align: center;
+}
+
+@media(min-width: 767px){
+	.card-height {
+		min-height: 100px;
+		/*max-height: 150px;*/
+	}
+}
+
+

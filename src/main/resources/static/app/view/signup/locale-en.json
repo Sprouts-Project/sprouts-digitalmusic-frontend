@@ -1,0 +1,20 @@
+{
+  "signup.customer.information": "Personal data",
+  "signup.name": "Name",
+  "signup.name_required": "Name is required",
+  "signup.email": "Email",
+  "signup.email_required": "Email is required",
+  "signup.birthDate": "Birthdate",
+  "signup.birthDate_required": "Birthdate is required",
+  "signup.state": "State",
+  "signup.state_required": "State is required",
+  "signup.sex": "Sex",
+  "signup.sex.male": "Male",
+  "signup.sex.female": "Female",
+  "signup.user_account.information": "User Account data",
+  "signup.username": "Username",
+  "signup.username_required": "Username is required",
+  "signup.password": "Password",
+  "signup.password_required": "Password is required",
+  "signup.submit": "Sign up"
+}

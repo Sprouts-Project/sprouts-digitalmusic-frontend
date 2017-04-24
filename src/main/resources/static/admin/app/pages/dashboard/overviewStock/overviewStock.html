@@ -1,0 +1,50 @@
+<div class="row">
+	<div class="col-lg-6 col-md-12 col-sm-12">
+		<h2>Finances overview </h2>
+		 <div
+		      ba-panel
+		      ba-panel-title="Monthly sales"
+		      ba-panel-class="medium-panel">
+			<div id="overviewStockChart"></div>
+		</div>
+	</div>
+	<div class="col-lg-6 col-md-12 col-sm-12">
+		<div class="form-group">
+			<select
+				ng-options="stockOptions as stockOptions.name for stockOptions in dropDownStockOptions"
+				ng-model="selectedStockOption" ng-change="updateStock()">
+			</select>
+		</div>
+		<div
+		       ba-panel
+		       ba-panel-title="Monthly sales by State"
+		       ba-panel-class="medium-panel">
+		    <div id="overviewStockMap"></div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-lg-6">
+		<div ba-panel ba-panel-title="Top 20 most monthly demanded items" ba-panel-class="with-scroll table-panel">
+			<div class="vertical-scroll">
+			  <table class="table table-striped">
+				<thead>
+					<tr>
+			      		<th class="table-id">#</th>
+			      		<th>Item name</th>
+			      		<th>Quantity</th>
+			    	</tr>
+			    </thead>
+			    <tbody>
+				    <tr ng-repeat="product in products">
+				      <td class="table-id">{{product.id}}</td>
+				      <td>{{product.title}}</td>
+				      <td>{{product.quantity}}</td>
+				    </tr>
+			    </tbody>
+			  </table>
+			</div>
+		</div>
+	</div>
+</div>
