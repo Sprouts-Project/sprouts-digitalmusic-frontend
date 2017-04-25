@@ -64,7 +64,7 @@
     	
     	var chartData= [];
     	response.data.monthly_sales.forEach(function(item, index){
-    		chartData.push({ date: new Date(item.year,item.month), value: parseFloat(item.numProducts).toFixed(2) });
+    		chartData.push({ date: new Date(item.year,item.month-1), value: parseFloat(item.numProducts).toFixed(2) });
     	});
     	chartData = orderByFilter(chartData, 'date', false);
 	  
