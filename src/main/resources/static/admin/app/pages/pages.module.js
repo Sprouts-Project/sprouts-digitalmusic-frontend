@@ -9,8 +9,8 @@
     'ui.router',
     'BlurAdmin.pages.dashboard',
     'BlurAdmin.pages.customersPanel',
+    'BlurAdmin.pages.financePanel',
     'BlurAdmin.pages.operationsPanel',
-    'BlurAdmin.pages.financePanel'
     
   ])/*
       .config(routeConfig);
