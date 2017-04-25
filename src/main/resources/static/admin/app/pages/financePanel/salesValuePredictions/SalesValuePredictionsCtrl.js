@@ -32,7 +32,7 @@
     	    "graphs": [{
     	        "bulletSize": 14,
     	        "valueField": "value",
-    	         "balloonText":"<div style='margin:10px; text-align:left;'><span style='font-size:13px'>[[category]]</span><br><span style='font-size:18px'>Sales: [[value]]</span>",
+    	         "balloonText":"<div style='margin:10px; text-align:left;'><span style='font-size:13px'>[[category]]</span><br><span style='font-size:18px'>Sales value: [[value]]</span>",
     	    }],
     	    "marginTop": 20,
     	    "marginRight": 70,

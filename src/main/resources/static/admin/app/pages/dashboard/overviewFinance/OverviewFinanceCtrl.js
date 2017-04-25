@@ -49,7 +49,7 @@
 		        alpha: 0.8,
 		        unlistedAreasAlpha: 0.2,
 		        unlistedAreasColor: layoutColors.defaultText,
-		        balloonText: '[[title]]: [[customData]] monthly sale'
+		        balloonText: '[[title]]: [[customData]] sales value'
 		      },
 		      export: {
 		        enabled: true
@@ -83,7 +83,7 @@
     	    "graphs": [{
     	        "bulletSize": 14,
     	        "valueField": "value",
-    	         "balloonText":"<div style='margin:10px; text-align:left;'><span style='font-size:13px'>[[category]]</span><br><span style='font-size:18px'>Monthly sale: [[value]]</span>",
+    	         "balloonText":"<div style='margin:10px; text-align:left;'><span style='font-size:13px'>[[category]]</span><br><span style='font-size:18px'>Sales: [[value]]</span>",
     	    }],
     	    "marginTop": 20,
     	    "marginRight": 70,

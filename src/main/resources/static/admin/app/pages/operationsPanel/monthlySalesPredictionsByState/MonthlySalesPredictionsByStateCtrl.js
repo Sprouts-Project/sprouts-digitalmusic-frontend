@@ -49,7 +49,7 @@
 		        alpha: 0.8,
 		        unlistedAreasAlpha: 0.2,
 		        unlistedAreasColor: layoutColors.defaultText,
-		        balloonText: '[[title]]: [[customData]] monthly sale'
+		        balloonText: '[[title]]: [[customData]] sales'
 		      },
 		      export: {
 		        enabled: true
