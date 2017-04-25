@@ -14,7 +14,7 @@
                     itemId: id
                 }
             }).success(function (response) {
-                $scope.item = response;
+                $scope.item = response[0];
                 $scope.error = false;
                 self.doGetReviews($scope.item.id);
             }).error(function (response) {
@@ -82,12 +82,30 @@
             });
         }
 
+        self.doGetRecommendsItemprofiles = function (id) {
+            $http({
+                method: 'GET',
+                url: '/recommender/item-profile-recommender',
+                params: {
+                    itemId: id
+                }
+            }).success(function (response) {
+                $scope.recommendsItemProfile = response.items;
+                $scope.categoriesItemProfile = response.categories;
+                $scope.error = false;
+            }).error(function (response) {
+                $scope.recommendsItemProfile = [];
+                $scope.error = true;
+            });
+        }
+        
         function init() {
             var id = $routeParams.itemId;
             if (id > 0) {
                 self.doIBoughtIt(id);
                 self.doGetItem(id);
-                self.doGetRecommends(id)
+                self.doGetRecommends(id);
+                self.doGetRecommendsItemprofiles(id);
             }
 
         }

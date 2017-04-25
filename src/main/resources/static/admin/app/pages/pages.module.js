@@ -9,26 +9,28 @@
     'ui.router',
     'BlurAdmin.pages.dashboard',
     'BlurAdmin.pages.customersPanel',
+    'BlurAdmin.pages.financePanel',
     'BlurAdmin.pages.operationsPanel',
-  ])
+    
+  ])/*
       .config(routeConfig);
 
-  /** @ngInject */
+  /** @ngInject 
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
     $urlRouterProvider.otherwise('/dashboard');
 
     /*baSidebarServiceProvider.addStaticItem({
       title: 'Customers panel',
       icon: 'ion-person',
-    });*/
+    });
     baSidebarServiceProvider.addStaticItem({
       title: 'Finance panel',
       icon: 'ion-cash',
     });
-    /*baSidebarServiceProvider.addStaticItem({
+    baSidebarServiceProvider.addStaticItem({
         title: 'Operation panel',
         icon: 'ion-ios-cog',
-      });*/
-  }
+      });
+  }*/
 
 })();

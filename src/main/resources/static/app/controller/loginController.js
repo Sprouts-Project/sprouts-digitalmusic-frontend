@@ -11,6 +11,7 @@
         } else {
             $scope.isLoggedIn = false;
         }
+        $scope.authority = AuthService.getAuthority();
 
         $scope.login = function () {
 

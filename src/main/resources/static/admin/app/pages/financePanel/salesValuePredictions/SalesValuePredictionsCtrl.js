@@ -5,17 +5,17 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.operationsPanel')
-      .controller('SalesPredictionsCtrl', SalesPredictionsCtrl);
+  angular.module('BlurAdmin.pages.financePanel')
+      .controller('SalesValuePredictionsCtrl', SalesValuePredictionsCtrl);
 
   /** @ngInject */
-  function SalesPredictionsCtrl($http, orderByFilter, baConfig) {
+  function SalesValuePredictionsCtrl($http, orderByFilter, baConfig) {
 	      
-    $http.get('/dashboard/sales-predictions').then(function(response) {
+    $http.get('/dashboard/sales-value-predictions').then(function(response) {
     	// Month sales
     	var chartData= [];
     	response.data.forEach(function(item, index){
-    		chartData.push({ date: new Date(item.year,item.month-1), value: parseFloat(item.sales).toFixed(2) });
+    		chartData.push({ date: new Date(item.year,item.month-1), value: parseFloat(item.salesValue).toFixed(2) });
     	});
     	chartData = orderByFilter(chartData, 'date', false);
 	  
@@ -32,7 +32,7 @@
     	    "graphs": [{
     	        "bulletSize": 14,
     	        "valueField": "value",
-    	         "balloonText":"<div style='margin:10px; text-align:left;'><span style='font-size:13px'>[[category]]</span><br><span style='font-size:18px'>Sales: [[value]]</span>",
+    	         "balloonText":"<div style='margin:10px; text-align:left;'><span style='font-size:13px'>[[category]]</span><br><span style='font-size:18px'>Sales value: [[value]]</span>",
     	    }],
     	    "marginTop": 20,
     	    "marginRight": 70,
