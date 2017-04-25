@@ -2,6 +2,7 @@
 (function() {
 	var ItemAdminController = function($scope, $http, $routeParams, $location) {
 		$scope.item,
+		$scope.numberOfSales,
 		$scope.categories = [],
 		$scope.error = false;
 
@@ -60,7 +61,8 @@
 					itemId : id
 				}
 			}).success(function(response) {
-				$scope.item=response;
+				$scope.item = response[0];
+				$scope.numberOfSales = response[1];
 				$scope.error = false;
 			}).error(function(response) {
 				$scope.error = true;

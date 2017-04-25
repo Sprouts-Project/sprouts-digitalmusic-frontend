@@ -14,7 +14,7 @@
                     itemId: id
                 }
             }).success(function (response) {
-                $scope.item = response;
+                $scope.item = response[0];
                 $scope.error = false;
                 self.doGetReviews($scope.item.id);
             }).error(function (response) {
