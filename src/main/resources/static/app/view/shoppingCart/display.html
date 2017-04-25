@@ -27,10 +27,11 @@
             </div>
         </div>
     </div>
+    <div class="row-buttons">
+        <a class="btn btn-success button-margin" ng-show="items.length" href="#/order/create">{{ 'shoppingCart.place_order' | translate }}</a>
+        <a class="btn btn-danger" ng-click="doClear()">{{ 'shoppingCart.clear' | translate }}</a>
+    </div>
 </div>
-
-<a class="btn btn-danger" ng-click="doClear()">{{ 'shoppingCart.clear' |
-    translate }}</a>
 
 
 <div class="alert alert-danger alert-dismissable" ng-show="error">

@@ -18,6 +18,7 @@
 	"review.reviewText" : "Opinión",
 	"review.submit" : "Enviar",
 	"review.overall" : "Valoración",
+	"recommender.itemProfile": "Productos relacionados",
 	"recommender.alsoBought": "Otros clientes que compraron este producto también compraron..."
 
 }

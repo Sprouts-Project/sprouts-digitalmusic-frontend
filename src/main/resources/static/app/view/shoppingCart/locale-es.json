@@ -3,5 +3,6 @@
   "shoppingCart.add" : "Añadir al carrito",
   "shoppingCart.remove" : "Eliminar",
   "shoppingCart.empty" : "¡Tu carrito de la compra está vacío!",
-  "shoppingCart.clear" : "Vaciar carrito de la compra"
+  "shoppingCart.clear" : "Vaciar carrito de la compra",
+  "shoppingCart.place_order": "Hacer pedido"
 }

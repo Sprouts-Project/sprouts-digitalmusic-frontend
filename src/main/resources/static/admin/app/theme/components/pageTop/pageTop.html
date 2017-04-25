@@ -1,5 +1,16 @@
 <div class="page-top clearfix" scroll-position="scrolled" max-height="50" ng-class="{'scrolled': scrolled}">
-  <a href="#/dashboard" class="al-logo clearfix"><span>Sprout</span>Dashboard</a>
+  <a href="#/dashboard" class="al-logo clearfix"><span>Sprouts</span>Dashboard</a>
   <a href class="collapse-menu-link ion-navicon" ba-sidebar-toggle-menu></a>
+
+  <div class="user-profile clearfix">
+    <div class="al-user-profile" uib-dropdown>
+      <a uib-dropdown-toggle class="profile-toggle-link">
+        <img ng-src="{{::( 'settings' | profilePicture )}}">
+      </a>
+      <ul  class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
+        <li><a href="/"><i class="fa fa-sign-out"></i>Exit</a></li>
+      </ul>
+    </div>
+  </div>
 
 </div>

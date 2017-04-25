@@ -33,7 +33,7 @@
 	        alpha: 0.8,
 	        unlistedAreasAlpha: 0.2,
 	        unlistedAreasColor: layoutColors.defaultText,
-	        balloonText: '[[title]]: [[customData]] monthly sale'
+	        balloonText: '[[title]]: [[customData]] sales'
 	      },
 	      export: {
 	        enabled: true
@@ -64,7 +64,7 @@
     	
     	var chartData= [];
     	response.data.monthly_sales.forEach(function(item, index){
-    		chartData.push({ date: new Date(item.year,item.month), value: parseFloat(item.numProducts).toFixed(2) });
+    		chartData.push({ date: new Date(item.year,item.month-1), value: parseFloat(item.numProducts).toFixed(2) });
     	});
     	chartData = orderByFilter(chartData, 'date', false);
 	  
@@ -80,7 +80,7 @@
     	    "graphs": [{
     	        "bulletSize": 14,
     	        "valueField": "value",
-    	         "balloonText":"<div style='margin:10px; text-align:left;'><span style='font-size:13px'>[[category]]</span><br><span style='font-size:18px'>Number of products: [[value]]</span>",
+    	         "balloonText":"<div style='margin:10px; text-align:left;'><span style='font-size:13px'>[[category]]</span><br><span style='font-size:18px'>Sales: [[value]]</span>",
     	    }],
     	    "marginTop": 20,
     	    "marginRight": 70,

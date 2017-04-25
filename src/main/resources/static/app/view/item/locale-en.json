@@ -18,5 +18,6 @@
 	"review.reviewText" : "Review",
 	"review.submit" : "Submit",
 	"recommender.alsoBought": "Other customers who bought this item also bought...",
+	"recommender.itemProfile": "Related items",
 	"review.overall" : "Rating"
 }

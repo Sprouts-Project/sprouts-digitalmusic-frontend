@@ -35,6 +35,14 @@ img.language {
 	text-align: center;
 }
 
+.row-buttons {
+	padding-bottom: 20px;
+}
+
+.button-margin {
+	padding-right: 1em;
+}
+
 @media(min-width: 767px){
 	.card-height {
 		min-height: 100px;
