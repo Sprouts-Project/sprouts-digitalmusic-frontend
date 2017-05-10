@@ -8,6 +8,8 @@
 	"item.submit" : "Subir",
 	"index.oops" : "Oh oh",
 	"index.error" : "Error",
+	"index.success" : "Exito",
+	"index.ok" : "Elemento añadido al carrito",
 	"item.add_shoppingcart" : "Añadir al carrito",
 	"item.delete" : "Eliminar",
 	"item.edit" : "Editar",
