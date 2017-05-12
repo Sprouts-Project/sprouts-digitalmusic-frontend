@@ -43,11 +43,15 @@ img.language {
 	padding-right: 1em;
 }
 
-@media(min-width: 767px){
-	.card-height {
-		min-height: 100px;
-		/*max-height: 150px;*/
-	}
+@media (min-width: 400px) and (max-width: 500px) {
+    .group list-group-image {
+        height: 100px;
+    }
+}
+
+
+div#products .item {
+    height: 325px;
 }
 
 
