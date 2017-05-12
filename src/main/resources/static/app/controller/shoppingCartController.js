@@ -1,9 +1,8 @@
 'use strict';
 (function() {
-	var ShoppingCartController = function($scope, $rootScope, $timeout, $http, $routeParams) {
+	var ShoppingCartController = function($scope, $http, $routeParams) {
 		$scope.items = [],
-		$scope.error = false,
-		$rootScope.prueba = false;
+		$scope.error = false;
 
 		self.doGetItems = function() {
 			$http({
@@ -29,19 +28,11 @@
 				}
 			}).success(function(response) {
 				$scope.error = false;
-				$rootScope.prueba = true;
-				console.log($rootScope.prueba)
-				$timeout(function(){ $scope.variableFalse(); }, 1500);
-				console.log($rootScope.prueba)
 			}).error(function(response) {
 				$scope.error = true;
 			});
 		}
 
-		$scope.variableFalse = function() {
-			$rootScope.prueba= false;
-		}
-		
 		$scope.doDeleteItem = function(id) {
 			$http({
 				method : 'GET',
@@ -86,5 +77,5 @@
 
 	};
 
-	angularApp.controllers.controller('ShoppingCartController', [ '$scope', '$rootScope', '$timeout', '$http', '$routeParams', ShoppingCartController ]);
+	angularApp.controllers.controller('ShoppingCartController', [ '$scope', '$http', '$routeParams', ShoppingCartController ]);
 })();
