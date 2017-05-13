@@ -150,3 +150,8 @@
 		ng-click="error = false">&times;</a> <strong>{{ 'index.oops'
 		| translate }}</strong> {{ 'index.error' | translate }}.
 </div>
+<div class="alert alert-success alert-dismissable" ng-controller="ReviewController" ng-show="successReview" >
+ 	<a class="close" data-dismiss="alert" aria-label="close"
+ 		ng-click="successReview = false" >&times;</a> <strong>{{ 'index.success'
+ 		| translate }}</strong> {{ 'index.reviewOk' | translate }}.
+</div>

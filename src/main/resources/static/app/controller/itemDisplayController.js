@@ -1,6 +1,6 @@
 'use strict';
 (function () {
-    var ItemDisplayController = function ($scope, $http, $routeParams, $filter, AuthService) {
+    var ItemDisplayController = function ($scope, $rootScope, $http, $routeParams, $filter, AuthService) {
         $scope.item,
             $scope.showForm = false,
             $scope.all_reviews = [],
@@ -138,5 +138,5 @@
 
     };
 
-    angularApp.controllers.controller('ItemDisplayController', ['$scope', '$http', '$routeParams', '$filter', 'AuthService', ItemDisplayController]);
+    angularApp.controllers.controller('ItemDisplayController', ['$scope', '$rootScope', '$http', '$routeParams', '$filter', 'AuthService', ItemDisplayController]);
 })();

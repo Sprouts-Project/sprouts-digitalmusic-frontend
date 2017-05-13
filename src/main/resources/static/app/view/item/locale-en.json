@@ -8,6 +8,8 @@
 	"item.submit" : "Submit",
 	"index.oops" : "Oops",
 	"index.error" : "Error",
+	"index.success" : "Success",
+	"index.reviewOk" : "Your review has been create successfully",
 	"item.add_shoppingcart" : "Add to shopping cart",
 	"item.delete" : "Delete",
 	"item.edit" : "Edit",
