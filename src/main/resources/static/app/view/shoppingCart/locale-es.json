@@ -4,5 +4,6 @@
   "shoppingCart.remove" : "Eliminar",
   "shoppingCart.empty" : "¡Tu carrito de la compra está vacío!",
   "shoppingCart.clear" : "Vaciar carrito de la compra",
-  "shoppingCart.place_order": "Hacer pedido"
+  "shoppingCart.place_order": "Hacer pedido",
+  "shoppingCart.total_price": "Precio total"
 }
