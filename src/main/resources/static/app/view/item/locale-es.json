@@ -22,6 +22,9 @@
 	"review.overall" : "Valoración",
 	"recommender.itemProfile": "Productos relacionados",
 	"recommender.alsoBought": "Otros clientes que compraron este producto también compraron...",
-	"item.loadmore": "Cargar más"
+	"item.loadmore": "Cargar más",
+	"review.summary_required" : "Resumen necesario",
+	"review.reviewText_required" : "Opinión necesaria",
+	"review.overall_required" : "Valoración necesaria"
 
 }

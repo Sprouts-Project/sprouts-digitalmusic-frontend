@@ -22,5 +22,9 @@
 	"recommender.alsoBought": "Other customers who bought this item also bought...",
 	"recommender.itemProfile": "Related items",
 	"review.overall" : "Rating",
-	"item.loadmore": "Load more"
+	"item.loadmore": "Load more",
+	"review.summary_required" : "Summary required",
+	"review.reviewText_required" : "Review text required",
+	"review.overall_required" : "Overall required"
+	
 }
