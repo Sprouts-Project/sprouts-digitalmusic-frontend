@@ -16,5 +16,8 @@
   "index.modify_personal_data": "Modify personal data",
   "index.order.list": "View orders",
   "index.shoppingCart" : "My shopping cart",
+  "index.modal_header" : "Congratulations!",
+  "index.modal_text" : "The item has been added to your shopping cart",
+  "index.modal_close" : "Close",
   "index.dashboard": "Dashboard"
 }

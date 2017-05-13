@@ -21,7 +21,7 @@
           <div class="col-xs-4 col-md-4 col-lg-4" ng-controller="LoginController"
                ng-show="isLoggedIn">
             <a class="btn btn-info" ng-click="doAddItem(item.id)"
-               ng-controller="ShoppingCartController"><span
+               ng-controller="ShoppingCartController" data-toggle="modal" data-target="#shoppingCartModal"><span
                 class="glyphicon glyphicon-shopping-cart"></span></a>
           </div>
           <div class="col-xs-4 col-md-4 col-lg-4">
@@ -41,7 +41,6 @@
     </div>
   </div>
 </div>
-
 
 <ul class="pagination">
   <li><a ng-click="reloadPaginated(0)">{{ 'index.first' |

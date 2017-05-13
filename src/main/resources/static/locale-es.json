@@ -16,5 +16,8 @@
   "index.modify_personal_data": "Modificar datos personales",
   "index.order.list": "Ver pedidos",
   "index.shoppingCart" : "Mi carrito de la compra",
+  "index.modal_header" : "¡Enhorabuena!",
+  "index.modal_text" : "El producto se ha añadido a tu carrito de la compra",
+  "index.modal_close" : "Cerrar",
   "index.dashboard" : "Panel de negocio"
 }
