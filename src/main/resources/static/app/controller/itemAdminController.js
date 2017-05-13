@@ -74,7 +74,7 @@
 		}
 
 		$scope.reset = function() {
-			$scope.item.$setPristine();
+			$scope.item = {}
 		}
 
 		function init() {
