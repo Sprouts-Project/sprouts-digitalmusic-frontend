@@ -43,11 +43,10 @@ img.language {
 	padding-right: 1em;
 }
 
-@media(min-width: 767px){
+@media(min-width: 767px) {
 	.card-height {
 		min-height: 100px;
 		/*max-height: 150px;*/
 	}
 }
-
 

@@ -29,7 +29,7 @@
 			}).success(function(response) {
 				$scope.error = false;
 			}).error(function(response) {
-				$scope.errors = true;
+				$scope.error = true;
 			});
 		}
 
