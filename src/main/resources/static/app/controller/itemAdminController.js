@@ -1,6 +1,6 @@
 'use strict';
 (function() {
-	var ItemAdminController = function($scope, $http, $routeParams, $location) {
+	var ItemAdminController = function($scope, $routeParams, $location, $http, $resource, $httpParamSerializer, $cookies, $window, AuthService) {
 		$scope.item,
 		$scope.numberOfSales,
 		$scope.categories = [],
@@ -74,7 +74,7 @@
 		}
 
 		$scope.reset = function() {
-			$scope.item = {}
+			$scope.item = {};
 		}
 
 		function init() {
@@ -88,5 +88,5 @@
 
 	};
 
-	angularApp.controllers.controller('ItemAdminController', [ '$scope', '$http', '$routeParams', '$location', ItemAdminController ]);
+	angularApp.controllers.controller('ItemAdminController', ['$scope', '$routeParams', '$location', '$http', '$resource', '$httpParamSerializer', '$cookies', '$window', 'AuthService', ItemAdminController ]);
 })();
