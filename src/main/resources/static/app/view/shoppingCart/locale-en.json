@@ -4,5 +4,6 @@
   "shoppingCart.remove" : "Remove",
   "shoppingCart.empty" : "Your shopping cart is empty!",
   "shoppingCart.clear" : "Empty shopping cart",
-  "shoppingCart.place_order": "Place order"
+  "shoppingCart.place_order": "Place order",
+  "shoppingCart.total_price": "Total price"
 }

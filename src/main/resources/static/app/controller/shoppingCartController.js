@@ -1,8 +1,7 @@
 'use strict';
 (function() {
 	var ShoppingCartController = function($scope, $http, $routeParams) {
-		$scope.items = [],
-		$scope.error = false;
+		$scope.items = [], $scope.error = false;
 
 		self.doGetItems = function() {
 			$http({
@@ -10,8 +9,9 @@
 				url : '/shoppingCart/list'
 			}).success(function(response) {
 				$scope.items = response;
+				$scope.totalprice = response.reduce(function(sum,  elem){return sum + elem. price}, 0);
 				$scope.error = false;
-			}).error(function (response) {
+			}).error(function(response) {
 				$scope.error = true;
 			});
 		}
@@ -46,7 +46,7 @@
 			}).success(function(response) {
 				$scope.error = false;
 				self.doGetItems();
-			}).error(function (response) {
+			}).error(function(response) {
 				$scope.error = true;
 			});
 		}
@@ -61,21 +61,22 @@
 			}).success(function(response) {
 				$scope.error = false;
 				self.doGetItems();
-			}).error(function (response) {
+			}).error(function(response) {
 				$scope.error = true;
 			});
 		}
 
 		function init() {
-            var loadItems = $routeParams.loadItems;
+			var loadItems = $routeParams.loadItems;
 
-            if(loadItems == '1') {
-                self.doGetItems();
+			if (loadItems == '1') {
+				self.doGetItems();
 			}
 		}
 		init();
 
 	};
 
-	angularApp.controllers.controller('ShoppingCartController', [ '$scope', '$http', '$routeParams', ShoppingCartController ]);
+	angularApp.controllers.controller('ShoppingCartController', [ '$scope',
+			'$http', '$routeParams', ShoppingCartController ]);
 })();
