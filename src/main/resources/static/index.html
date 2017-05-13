@@ -48,6 +48,23 @@
 
 		<div class="container">
 			<div ng-view="" class="view-content"></div>
+
+			<div id="shoppingCartModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">{{ 'index.modal_header' | translate }}</h4>
+						</div>
+						<div class="modal-body">
+							<p>{{ 'index.modal_text' | translate }}</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">{{ 'index.modal_close' | translate }}</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -119,6 +136,17 @@
 	<script src="./app/controller/shoppingCartController.js"></script>
 	<script src="./app/controller/reviewController.js"></script>
 	<script src="./app/controller/homePageController.js"></script>
-	
+
+    <script>
+        $(function(){
+            $('#shoppingCartModal').on('show.bs.modal', function(){
+                var shoppingCartModal = $(this);
+                clearTimeout(shoppingCartModal.data('hideInterval'));
+                shoppingCartModal.data('hideInterval', setTimeout(function(){
+                    shoppingCartModal.modal('hide');
+                }, 1500));
+            });
+        });
+    </script>
 </body>
 </html>
