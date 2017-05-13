@@ -1,63 +1,62 @@
 <div class="container">
-	<div id="products" class="row list-group">
-		<div class="item col-xs-12 col-md-4 col-lg-2"
-			ng-repeat="item in items">
-			<div class="thumbnail">
-				<img class="group list-group-image card-img" src="{{item.imUrl}}"
-					alt="{{item.title}}" height="300px" />
-				<div class="caption">
-					<div class="card-height">
-						<h5 class="group inner list-group-item-heading">
-							<strong> <a href="#/item/display?itemId={{item.id}}">{{item.title}}</a></strong>
-						</h5>
-						<div class="row">
-							<div class="col-xs-12 col-md-6">
-								<p>{{item.brand}}</p>
-							</div>
-						</div>
-					</div>
-					<div>
-						<h4 class="text-success">${{item.price}}</h4>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 col-md-6" ng-controller="LoginController"
-							ng-show="isLoggedIn">
-							<a class="btn btn-info" ng-click="doAddItem(item.id)"
-								ng-controller="ShoppingCartController" ><span
-								class="glyphicon glyphicon-shopping-cart"></span></a>
-						</div>
-						<div class="col-xs-12 col-md-6">
-							<a class="btn btn-success"
-								href="#/item/display?itemId={{item.id}}">{{ 'item.view' |
-								translate }}</a>
-						</div>
-					</div>
-					<div class="row" ng-controller="LoginController"
-						ng-show="isLoggedIn && authority=='ADMIN'">
-						<div class="col-xs-12 col-md-6">
-							<a class="btn btn-primary" href="#/item/admin?itemId={{item.id}}"><i
-								class="material-icons">create</i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div id="products" class="row list-group">
+    <div class="item col-xs-12 col-sm-6 col-md-6 col-lg-3"
+         ng-repeat="item in items">
+      <div class="thumbnail">
+        <a href="#/item/display?itemId={{item.id}}"><img class="group list-group-image card-img"
+                                                         src="{{item.imUrl}}"
+                                                         alt="{{item.title}}" height="250px"/></a>
+        <div class="caption">
+          <div class="card-height">
+            <h5 class="group inner list-group-item-heading">
+              <strong>&nbsp;<a href="#/item/display?itemId={{item.id}}">{{item.title}}</a></strong>
+            </h5>
+            <div>
+              <p>&nbsp;{{item.brand}}</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-success">&nbsp;${{item.price}}</h4>
+          </div>
+          <div class="col-xs-4 col-md-4 col-lg-4" ng-controller="LoginController"
+               ng-show="isLoggedIn">
+            <a class="btn btn-info" ng-click="doAddItem(item.id)"
+               ng-controller="ShoppingCartController"><span
+                class="glyphicon glyphicon-shopping-cart"></span></a>
+          </div>
+          <div class="col-xs-4 col-md-4 col-lg-4">
+            <a class="btn btn-success"
+               href="#/item/display?itemId={{item.id}}">{{ 'item.view' |
+              translate }}</a>
+          </div>
+          <div ng-controller="LoginController"
+               ng-show="isLoggedIn && authority=='ADMIN'">
+            <div class="col-xs-4 col-md-4 col-lg-4">
+              <a class="btn btn-primary" href="#/item/admin?itemId={{item.id}}"><i
+                  class="glyphicon glyphicon-pencil"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
 <ul class="pagination">
-	<li><a ng-click="reloadPaginated(0)">{{ 'index.first' |
-			translate }}</a></li>
-	<li ng-repeat="i in range()"
-		ng-class="{active: i == paginationInfo.currentPage}"><a
-		ng-click="reloadPaginated(i)">{{i+1}}</a></li>
-	<li><a ng-click="reloadPaginated(paginationInfo.totalPages-1)">{{
-			'index.last' | translate }}</a></li>
+  <li><a ng-click="reloadPaginated(0)">{{ 'index.first' |
+    translate }}</a></li>
+  <li ng-repeat="i in range()"
+      ng-class="{active: i == paginationInfo.currentPage}"><a
+      ng-click="reloadPaginated(i)">{{i+1}}</a></li>
+  <li><a ng-click="reloadPaginated(paginationInfo.totalPages-1)">{{
+    'index.last' | translate }}</a></li>
 </ul>
 
 <div class="alert alert-danger alert-dismissable" ng-show="error">
-	<a class="close" data-dismiss="alert" aria-label="close"
-		ng-click="error = false">&times;</a> <strong>{{ 'index.oops'
-		| translate }}</strong> {{ 'index.error' | translate }}.
+  <a class="close" data-dismiss="alert" aria-label="close"
+     ng-click="error = false">&times;</a> <strong>{{ 'index.oops'
+  | translate }}</strong> {{ 'index.error' | translate }}.
 </div>
+
+<link href="css/items.css" rel="stylesheet">
