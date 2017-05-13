@@ -32,15 +32,21 @@
                 },
                 data: $httpParamSerializer($scope.formRequest)
             }
-            $http(req).then(function (data) {
-                $http.defaults.headers.common.Authorization =
-                    'Bearer ' + data.data.access_token;
-                $cookies.put("access_token", data.data.access_token);
+            $http(req).success(function (response) {
+                $scope.error = false;
+            }).error(function (response) {
+                $scope.error = true;
+            }).then(function (data) {
+                if (!$scope.error) {
+                    $http.defaults.headers.common.Authorization =
+                        'Bearer ' + data.data.access_token;
+                    $cookies.put("access_token", data.data.access_token);
 
-                $http.get("/authority/get").then(function (data) {
-                    $cookies.put("authority", data.data.authority);
-                    window.location.href = "/";
-                });
+                    $http.get("/authority/get").then(function (data) {
+                        $cookies.put("authority", data.data.authority);
+                        window.location.href = "/";
+                    });
+                }
             });
         };
 
