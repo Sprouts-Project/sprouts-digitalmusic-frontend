@@ -33,10 +33,6 @@
             self.createReview(itemId);
         }
         
-        $scope.successReviewFalse = function() {
-        	$rootScope.successReview= false;
-        }
-        
         $scope.successReviewReload = function() {
         	$route.reload();
         }
