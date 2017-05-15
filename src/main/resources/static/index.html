@@ -37,7 +37,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#/login" ng-controller="LoginController" ng-hide="isLoggedIn">{{ 'index.login' | translate }}</a></li>
 						<li><a href="#/signup" ng-controller="LoginController" ng-hide="isLoggedIn">{{ 'index.signup' | translate }}</a></li>
-						<li><a href="#/shoppingCart?loadItems=1" ng-controller="LoginController" ng-show="isLoggedIn">{{ 'index.shoppingCart' | translate }}</a></li>
+						<li><a href="#/shoppingCart?loadItems=1" ng-controller="LoginController" ng-show="isLoggedIn && authority=='USER'">{{ 'index.shoppingCart' | translate }}</a></li>
 						<li><a href="#/customer/show" ng-controller="LoginController" ng-show="isLoggedIn && authority=='USER'">{{ 'index.modify_personal_data' | translate }}</a></li>
 						<li><a href="#" ng-controller="LoginController" ng-click="logout()" ng-show="isLoggedIn">{{ 'index.logout' | translate }}</a></li>
 					</ul>
@@ -48,6 +48,23 @@
 
 		<div class="container">
 			<div ng-view="" class="view-content"></div>
+
+			<div id="shoppingCartModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">{{ 'index.modal_header' | translate }}</h4>
+						</div>
+						<div class="modal-body">
+							<p>{{ 'index.modal_text' | translate }}</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">{{ 'index.modal_close' | translate }}</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -99,6 +116,12 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.13.1/angular-translate.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.13.1/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+	<script
+			src="https://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous"></script>
+	<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="./app/app.js"></script>
 	<script src="./app/controller/routes.js"></script>
 	<script src="./app/controller/itemController.js"></script>
@@ -113,6 +136,17 @@
 	<script src="./app/controller/shoppingCartController.js"></script>
 	<script src="./app/controller/reviewController.js"></script>
 	<script src="./app/controller/homePageController.js"></script>
-	
+
+    <script>
+        $(function(){
+            $('#shoppingCartModal').on('show.bs.modal', function(){
+                var shoppingCartModal = $(this);
+                clearTimeout(shoppingCartModal.data('hideInterval'));
+                shoppingCartModal.data('hideInterval', setTimeout(function(){
+                    shoppingCartModal.modal('hide');
+                }, 1500));
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,8 +1,9 @@
 'use strict';
 (function () {
-    var ReviewController = function ($scope, $http) {
+    var ReviewController = function ($scope, $rootScope, $route, $timeout, $http) {
         $scope.review,
-            $scope.error = false;
+            $scope.error = false,
+            $rootScope.successReview = false;
 
         self.createReview = function (itemId) {
             $http({
@@ -18,6 +19,8 @@
             }).success(function (response) {
                 if (response["success"]==true) {
                     $scope.error = false;
+                    $scope.successReview = true;
+                    $timeout(function(){ $scope.successReviewReload(); }, 3000);
                 } else {
                     $scope.error = true;
                 }
@@ -29,8 +32,12 @@
         $scope.doSubmit = function (itemId) {
             self.createReview(itemId);
         }
+        
+        $scope.successReviewReload = function() {
+        	$route.reload();
+        }
 
     };
 
-    angularApp.controllers.controller('ReviewController', ['$scope', '$http', ReviewController]);
+    angularApp.controllers.controller('ReviewController', ['$scope', '$rootScope', '$route', '$timeout', '$http', ReviewController]);
 })();

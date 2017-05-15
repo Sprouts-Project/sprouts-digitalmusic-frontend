@@ -8,6 +8,8 @@
 	"item.submit" : "Subir",
 	"index.oops" : "Oh oh",
 	"index.error" : "Error",
+	"index.success" : "Éxito",
+	"index.reviewOk" : "Tu valoración ha sido creada con exito",
 	"item.add_shoppingcart" : "Añadir al carrito",
 	"item.delete" : "Eliminar",
 	"item.edit" : "Editar",
@@ -19,6 +21,10 @@
 	"review.submit" : "Enviar",
 	"review.overall" : "Valoración",
 	"recommender.itemProfile": "Productos relacionados",
-	"recommender.alsoBought": "Otros clientes que compraron este producto también compraron..."
+	"recommender.alsoBought": "Otros clientes que compraron este producto también compraron...",
+	"item.loadmore": "Cargar más",
+	"review.summary_required" : "Resumen necesario",
+	"review.reviewText_required" : "Opinión necesaria",
+	"review.overall_required" : "Valoración necesaria"
 
 }

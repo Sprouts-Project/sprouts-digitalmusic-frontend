@@ -4,5 +4,6 @@
   "login.username_required": "El nombre de usuario es obligatorio",
   "login.password": "Contraseña",
   "login.password_required": "La contraseña es obligatoria",
-  "login.submit": "Enviar"
+  "login.submit": "Enviar",
+  "login.bad_credentials_error": "Las credenciales que ha usado no son válidas. Por favor, inténtelo de nuevo"
 }

@@ -8,6 +8,8 @@
 	"item.submit" : "Submit",
 	"index.oops" : "Oops",
 	"index.error" : "Error",
+	"index.success" : "Success",
+	"index.reviewOk" : "Your review has been create successfully",
 	"item.add_shoppingcart" : "Add to shopping cart",
 	"item.delete" : "Delete",
 	"item.edit" : "Edit",
@@ -19,5 +21,10 @@
 	"review.submit" : "Submit",
 	"recommender.alsoBought": "Other customers who bought this item also bought...",
 	"recommender.itemProfile": "Related items",
-	"review.overall" : "Rating"
+	"review.overall" : "Rating",
+	"item.loadmore": "Load more",
+	"review.summary_required" : "Summary required",
+	"review.reviewText_required" : "Review text required",
+	"review.overall_required" : "Overall required"
+	
 }

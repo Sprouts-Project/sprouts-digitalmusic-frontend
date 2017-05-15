@@ -19,7 +19,7 @@
 	<div class="form-group">
 		<label for="price">{{ 'item.price' | translate }}</label> <input
 			type="text" class="form-control" name="price"
-			placeholder="{{ 'item.price' | translate }}" ng-model="item.price">
+			placeholder="{{ 'item.price' | translate }}" ng-model="item.price" required min="0">
 	</div>
 	<div class="form-group">
 		<label for="imUrl">{{ 'item.imUrl' | translate }}</label> <input
@@ -28,7 +28,7 @@
 	</div>
 	<div class="form-group">
 		<select multiple ng-multiple="true" ng-model="item.categories"
-			ng-options="category.name for category in categories"></select>
+			ng-options="category.name for category in categories | orderBy:'name'"></select>
 	</div>
 
 	<div class="form-group">
@@ -43,8 +43,8 @@
 			value="{{ 'item.delete' | translate }}" />
 		<input type="submit"
 			class="btn btn-default" ng-click="doSubmit()"
-			value="{{ 'item.submit' | translate }}" />
-
+			value="{{ 'item.submit' | translate }}" 
+			ng-disabled="item.$invalid" />
 	</div>
 </form>
 
