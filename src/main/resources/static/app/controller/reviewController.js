@@ -20,13 +20,19 @@
                 if (response["success"]==true) {
                     $scope.error = false;
                     $scope.successReview = true;
-                    $timeout(function(){ $scope.successReviewReload(); }, 3000);
+                    $rootScope.$emit("doGetReviewsAfterCreateOne", {});
+                    $timeout(function(){ $scope.setSuccessReview(); }, 3000);
+                    $scope.review.summary = $scope.review.reviewText = $scope.review.overall = null;
                 } else {
                     $scope.error = true;
                 }
             }).error(function (response) {
                 $scope.error = true;
             });
+        }
+        
+        $scope.setSuccessReview = function(){
+        	$scope.successReview = false;
         }
 
         $scope.doSubmit = function (itemId) {
