@@ -19,7 +19,7 @@
             <h4 class="text-success">&nbsp;${{item.price}}</h4>
           </div>
           <div class="col-xs-4 col-md-4 col-lg-4" ng-controller="LoginController"
-               ng-show="isLoggedIn">
+               ng-show="isLoggedIn && authority=='USER'">
             <a class="btn btn-info" ng-click="doAddItem(item.id)"
                ng-controller="ShoppingCartController" data-toggle="modal" data-target="#shoppingCartModal"><span
                 class="glyphicon glyphicon-shopping-cart"></span></a>

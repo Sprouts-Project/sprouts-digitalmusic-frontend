@@ -24,7 +24,7 @@
 							</div>
 						</div>
 							<div class="row">
-								<div class="col-xs-2 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn">
+								<div class="col-xs-2 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn && authority=='USER'">
 									<a class="btn btn-info" ng-click="doAddItem(item.id)" ng-controller="ShoppingCartController" data-toggle="modal" data-target="#shoppingCartModal"><span class="glyphicon glyphicon-shopping-cart"></span></a>
 								</div>
 								<div class="col-xs-2 col-md-6">
@@ -59,7 +59,7 @@
 							</div>
 						</div>
 							<div class="row">
-								<div class="col-xs-2 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn">
+								<div class="col-xs-2 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn && authority=='USER'">
 									<a class="btn btn-info" ng-click="doAddItem(item.item_id)" ng-controller="ShoppingCartController" data-toggle="modal" data-target="#shoppingCartModal"><span class="glyphicon glyphicon-shopping-cart"></span></a>
 								</div>
 								<div class="col-xs-2 col-md-6">
@@ -94,7 +94,7 @@
 							</div>
 						</div>
 							<div class="row">
-								<div class="col-xs-2 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn">
+								<div class="col-xs-2 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn && authority=='USER'">
 									<a class="btn btn-info" ng-click="doAddItem(item.item_id)" ng-controller="ShoppingCartController" data-toggle="modal" data-target="#shoppingCartModal"><span class="glyphicon glyphicon-shopping-cart"></span></a>
 								</div>
 								<div class="col-xs-2 col-md-6">
