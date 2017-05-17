@@ -35,6 +35,10 @@
                     itemId: id
                 }
             }).success(function (response) {
+
+            	$scope.counterReview = 1;
+            	$scope.showLoadMore = true;
+            	
                 $scope.all_reviews = response;
                 $scope.reviews = $scope.all_reviews.slice(0, NUMBER_OF_REVIEWS);
                 if ($scope.reviews.length < NUMBER_OF_REVIEWS || $scope.all_reviews.length == NUMBER_OF_REVIEWS) {
@@ -122,6 +126,10 @@
             $scope.counterReview = $scope.counterReview + 1;
             $scope.$apply();
         }
+        
+        $rootScope.$on("doGetReviewsAfterCreateOne", function(){
+            self.doGetReviews($scope.item.id);
+         });
 
         function init() {
             var id = $routeParams.itemId;
