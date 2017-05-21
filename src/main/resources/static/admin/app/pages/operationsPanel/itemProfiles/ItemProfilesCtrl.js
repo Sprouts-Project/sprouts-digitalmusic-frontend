@@ -7,7 +7,7 @@
 	/** @ngInject */
 	function ItemProfilesCtrl($element, $scope, $http, orderByFilter, baConfig,
 			layoutPaths) {
-		var layoutColors = baConfig.colors;
+		baConfig.colors;
 
 		$http.get('/dashboard/item-profiles').then(function(response) {
 			$scope.items = orderByFilter(response.data, 'number_items', true);
