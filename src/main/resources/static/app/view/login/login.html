@@ -10,7 +10,7 @@
                                                                                             placeholder="{{ 'login.username' | translate }}"
                                                                                             ng-model="loginCredentials.username"
                                                                                             required>
-                    <div ng-show="loginForm.$submitted || loginForm.username.$touched">
+                    <div ng-show="loginForm.$submitted || !loginForm.username.$valid">
                         <span ng-show="loginForm.username.$error.required"
                               class="hasError">{{ 'login.username_required' | translate }}</span>
                     </div>
@@ -22,7 +22,7 @@
                                                                                             placeholder="{{ 'login.password' | translate }}"
                                                                                             ng-model="loginCredentials.password"
                                                                                             required>
-                    <div ng-show="loginForm.$submitted || loginForm.password.$touched">
+                    <div ng-show="loginForm.$submitted || !loginForm.password.$valid">
                         <span ng-show="loginForm.password.$error.required"
                               class="hasError">{{ 'login.password_required' | translate }}</span>
                     </div>
