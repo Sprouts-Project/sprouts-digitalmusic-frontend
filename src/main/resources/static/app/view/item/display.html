@@ -1,167 +1,188 @@
-<div class="row">
+<div>
+    <div class="thumbnail">
+        <img class="img-responsive" src="{{item.imUrl}}" alt="{{item.brand}}">
+        <h1><a href="#/item/display?itemId={{item.id}}">{{item.title}}</a></h1>
+        <h3 class="pull-left">{{item.brand}}</h3>
+        <h3 class="text-success pull-right">${{item.price}}</h3>
+        <br><br><br>
+        <div class="col-xs-12 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn && authority=='USER'">
+            <a class="btn btn-info" ng-click="doAddItem(item.id)" ng-controller="ShoppingCartController"
+               data-toggle="modal" data-target="#shoppingCartModal">{{ 'item.add_shoppingcart' | translate }} <span
+                    class="glyphicon glyphicon-shopping-cart"></span></a>
+        </div>
+        <br><br>
+        <hr>
+        <div id="avgRating" ng-show="average > 0">
+            <h4 class="text-info"><strong>{{ 'item.reviewAvg' | translate }}:</strong> {{average | number : 2}}/5</h4>
+            <hr>
+        </div>
+        <p>{{item.description}}</p>
+    </div>
 
-		<div class="thumbnail">
-			<img class="img-responsive" src="{{item.imUrl}}" alt="{{item.brand}}">
-			<h1><a href="#/item/display?itemId={{item.id}}">{{item.title}}</a></h1>
-			<h3 class="pull-left">{{item.brand}}</h3>
-			<h3 class="text-success pull-right">${{item.price}}</h3>
-			<br><br><br>
-			<div class="col-xs-12 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn && authority=='USER'">
-				<a class="btn btn-info" ng-click="doAddItem(item.id)" ng-controller="ShoppingCartController" data-toggle="modal" data-target="#shoppingCartModal">{{ 'item.add_shoppingcart' | translate }} <span class="glyphicon glyphicon-shopping-cart"></span></a>
-			</div>
-			<br><br>
-			<hr>
-			<div id="avgRating" ng-show="average > 0">
-				<h4 class="text-info"><strong>{{ 'item.reviewAvg' | translate }}:</strong> {{average | number : 2}}/5</h4>
-				<hr>
-			</div>
-			<p>{{item.description}}</p>
-		</div>
-		
-		<div class="thumbnail" ng-show="recommends.length">
-			<h3>{{ 'recommender.alsoBought' | translate }}</h3>			
-			<div class="container">
-				<div id="products" class="row list-group">
-					<div class="item col-xs-12 col-md-4 col-lg-2" ng-repeat="item in recommends">
-						<div class="thumbnail">
-							<img class="group list-group-image card-img" src="{{item.imUrl}}"
-								alt="{{item.title}}" height="300px"/>
-							<div class="caption">
-							<div class="card-height">
-								<h5 class="group inner list-group-item-heading"><strong>
-									{{item.title }}</strong></h5>
-								<div class="row">
-									<div class="col-xs-12 col-md-6">
-										<p>{{item.brand}}</p>
-									</div>
-								</div>
-							</div>
-								<div class="row">
-									<div class="col-xs-2 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn && authority=='USER'">
-										<a class="btn btn-info" ng-click="doAddItem(item.item_id)" ng-controller="ShoppingCartController" data-toggle="modal" data-target="#shoppingCartModal"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									</div>
-									<div class="col-xs-2 col-md-6">
-										<a class="btn btn-success" href="#/item/display?itemId={{item.item_id}}" >{{ 'item.view' | translate }}</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-				
-		<div class="thumbnail" ng-show="recommendsItemProfile.length">
-			<h3>{{ 'recommender.itemProfile' | translate }}</h3>	
-			<h4>{{ categoriesItemProfile.join(", ") }}</h4>		
-			<div class="container">
-				<div id="products" class="row list-group">
-					<div class="item col-xs-12 col-md-4 col-lg-2" ng-repeat="item in recommendsItemProfile">
-						<div class="thumbnail">
-							<img class="group list-group-image card-img" src="{{item.imUrl}}"
-								alt="{{item.title}}" height="300px"/>
-							<div class="caption">
-							<div class="card-height">
-								<h5 class="group inner list-group-item-heading"><strong>
-									{{item.title }}</strong></h5>
-								<div class="row">
-									<div class="col-xs-12 col-md-6">
-										<p>{{item.brand}}</p>
-									</div>
-								</div>
-							</div>
-								<div class="row">
-									<div class="col-xs-2 col-md-6" ng-controller="LoginController" ng-show="isLoggedIn && authority=='USER'">
-										<a class="btn btn-info" ng-click="doAddItem(item.id)" ng-controller="ShoppingCartController" data-toggle="modal" data-target="#shoppingCartModal"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									</div>
-									<div class="col-xs-2 col-md-6">
-										<a class="btn btn-success" href="#/item/display?itemId={{item.id}}" >{{ 'item.view' | translate }}</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-		
-		
-		<div class="well">
-			<div class="row" ng-repeat="review in reviews">
-				<div class="col-md-12">
-					<h3>{{review.summary}}</h3>
-					<i class="material-icons">grade</i> {{review.overall}}/5
-					<br>
-					<i class="material-icons">thumb_up</i> {{review.helpful}}
-					<br>
-					<i class="material-icons">thumb_down</i> {{review.unhelpful}}
-					<br>
-					<strong>{{review.customer.name}}</strong>
-					<span class="pull-right">{{review.date | date:'yyyy-MM-dd'}}</span>
-					<p>{{review.reviewText}}</p>
-				</div>
+    <div class="row">
+        <div ng-show="recommends.length">
+            <h3>{{ 'recommender.alsoBought' | translate }}</h3>
+            <div class="container">
+                <div id="products" class="row list-group">
+                    <div class="item col-xs-12 col-sm-6 col-md-6 col-lg-2" ng-repeat="item in recommends">
+                        <div class="thumbnail">
+                            <img class="group list-group-image card-img" src="{{item.imUrl}}"
+                                 alt="{{item.title}}" height="250px"/>
+                            <div class="caption">
+                                <div class="card-height">
+                                    <h5 class="group inner list-group-item-heading"><strong>
+                                        &nbsp;{{item.title }}</strong></h5>
+                                    <div>
+                                        <div>
+                                            <p>&nbsp;{{item.brand}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2 col-md-6" ng-controller="LoginController"
+                                         ng-show="isLoggedIn && authority=='USER'">
+                                        <a class="btn btn-info" ng-click="doAddItem(item.item_id)"
+                                           ng-controller="ShoppingCartController" data-toggle="modal"
+                                           data-target="#shoppingCartModal"><span
+                                                class="glyphicon glyphicon-shopping-cart"></span></a>
+                                    </div>
+                                    <div class="col-xs-2 col-md-6">
+                                        <a class="btn btn-success" href="#/item/display?itemId={{item.item_id}}">{{
+                                            'item.view'
+                                            | translate }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-				<hr>
-			</div>
-		</div>
-		<div ng-show="showLoadMore" class="row row-buttons align-center"><a class="btn btn-success ng-binding" onclick="loadmore()">{{ 'item.loadmore' | translate }}</a></div>
+    <div class="row">
+        <div ng-show="recommendsItemProfile.length">
+            <h3>{{ 'recommender.itemProfile' | translate }}</h3>
+            <h4>{{ categoriesItemProfile.join(", ") }}</h4>
+            <div class="container">
+                <div id="products" class="row list-group">
+                    <div class="item col-xs-12 col-sm-6 col-md-6 col-lg-2" ng-repeat="item in recommendsItemProfile">
+                        <div class="thumbnail">
+                            <img class="group list-group-image card-img" src="{{item.imUrl}}"
+                                 alt="{{item.title}}" height="250px"/>
+                            <div class="caption">
+                                <div class="card-height">
+                                    <h5 class="group inner list-group-item-heading"><strong>
+                                        &nbsp;{{item.title }}</strong></h5>
+                                    <div>
+                                        <div>
+                                            <p>&nbsp;{{item.brand}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2 col-md-6" ng-controller="LoginController"
+                                         ng-show="isLoggedIn && authority=='USER'">
+                                        <a class="btn btn-info" ng-click="doAddItem(item.id)"
+                                           ng-controller="ShoppingCartController" data-toggle="modal"
+                                           data-target="#shoppingCartModal"><span
+                                                class="glyphicon glyphicon-shopping-cart"></span></a>
+                                    </div>
+                                    <div class="col-xs-2 col-md-6">
+                                        <a class="btn btn-success" href="#/item/display?itemId={{item.id}}">{{
+                                            'item.view'
+                                            | translate }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</div>
 
-<form novalidate class="simple-form" name="reviewForm" ng-show="showForm">
-	<div class="form-group">
-		<label for="summary">{{ 'review.summary' | translate }}</label> <input
-			type="text" class="form-control" id="summary" name="summary"
-			placeholder="{{ 'review.summary' | translate }}" ng-model="review.summary" required>
-			
-			<span ng-show="reviewForm.summary.$error.required"
-                              class="hasError">{{ 'review.summary_required' | translate }}</span>
-	</div>
-	<div class="form-group">
-		<label for="reviewText">{{ 'review.reviewText' | translate }}</label>
-		<textarea type="text" class="form-control" id="reviewText" name="reviewText"
-			placeholder="{{ 'review.reviewText' | translate }}"
-			ng-model="review.reviewText" required>
+    <div class="well">
+        <div class="row" ng-repeat="review in reviews">
+            <div class="col-md-12">
+                <h3>{{review.summary}}</h3>
+                <i class="material-icons">grade</i> {{review.overall}}/5
+                <br>
+                <i class="material-icons">thumb_up</i> {{review.helpful}}
+                <br>
+                <i class="material-icons">thumb_down</i> {{review.unhelpful}}
+                <br>
+                <strong>{{review.customer.name}}</strong>
+                <span class="pull-right">{{review.date | date:'yyyy-MM-dd'}}</span>
+                <p>{{review.reviewText}}</p>
+            </div>
+
+            <hr>
+        </div>
+    </div>
+    <div ng-show="showLoadMore" class="row row-buttons align-center"><a class="btn btn-success ng-binding"
+                                                                        onclick="loadmore()">{{ 'item.loadmore' |
+        translate }}</a></div>
+
+    <form novalidate class="simple-form" name="reviewForm" ng-show="showForm">
+        <div class="form-group">
+            <label for="summary">{{ 'review.summary' | translate }}</label> <input
+                type="text" class="form-control" id="summary" name="summary"
+                placeholder="{{ 'review.summary' | translate }}" ng-model="review.summary" required>
+
+            <span ng-show="reviewForm.summary.$error.required"
+                  class="hasError">{{ 'review.summary_required' | translate }}</span>
+        </div>
+        <div class="form-group">
+            <label for="reviewText">{{ 'review.reviewText' | translate }}</label>
+            <textarea type="text" class="form-control" id="reviewText" name="reviewText"
+                      placeholder="{{ 'review.reviewText' | translate }}"
+                      ng-model="review.reviewText" required>
 			</textarea>
-			<span ng-show="reviewForm.reviewText.$error.required"
-                              class="hasError">{{ 'review.reviewText_required' | translate }}</span>
-			
-	</div>
-	<div class="form-group">
-		<label for="overall">{{ 'review.overall' | translate }}</label>
-		<select type="text" class="form-control" id="overall" name="overall"
-		ng-model="review.overall" required>
-   		 <option value="0">0</option>
-    	 <option value="1">1</option>
-   		 <option value="2">2</option>
-   		 <option value="3">3</option>
-   		 <option value="4">4</option>
-  		 <option value="5">5</option>
- 		 </select>
- 		 
- 		 <span ng-show="reviewForm.overall.$error.required"
-                              class="hasError">{{ 'review.overall_required' | translate }}</span>
- 		 
-	</div>
+            <span ng-show="reviewForm.reviewText.$error.required"
+                  class="hasError">{{ 'review.reviewText_required' | translate }}</span>
 
-	<div class="form-group">
-		<input type="hidden" id="reviewId" ng-model="review.id" />
-		 <input
-			type="hidden" id="reviewVersion" ng-model="review.version" /><input type="submit"
-			class="btn btn-default" ng-click="doSubmit(item.id)" ng-controller="ReviewController"
-			value="{{ 'review.submit' | translate }}"   ng-disabled="reviewForm.$invalid"/>
+        </div>
+        <div class="form-group">
+            <label for="overall">{{ 'review.overall' | translate }}</label>
+            <select type="text" class="form-control" id="overall" name="overall"
+                    ng-model="review.overall" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
 
-	</div>
-</form>
-<div class="alert alert-danger alert-dismissable" ng-controller="ReviewController" ng-show="error">
-	<a class="close" data-dismiss="alert" aria-label="close"
-		ng-click="error = false">&times;</a> <strong>{{ 'index.oops'
-		| translate }}</strong> {{ 'index.error' | translate }}.
+            <span ng-show="reviewForm.overall.$error.required"
+                  class="hasError">{{ 'review.overall_required' | translate }}</span>
+
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" id="reviewId" ng-model="review.id"/>
+            <input
+                    type="hidden" id="reviewVersion" ng-model="review.version"/><input type="submit"
+                                                                                       class="btn btn-default"
+                                                                                       ng-click="doSubmit(item.id)"
+                                                                                       ng-controller="ReviewController"
+                                                                                       value="{{ 'review.submit' | translate }}"
+                                                                                       ng-disabled="reviewForm.$invalid"/>
+
+        </div>
+    </form>
+    <div class="alert alert-danger alert-dismissable" ng-controller="ReviewController" ng-show="error">
+        <a class="close" data-dismiss="alert" aria-label="close"
+           ng-click="error = false">&times;</a> <strong>{{ 'index.oops'
+        | translate }}</strong> {{ 'index.error' | translate }}.
+    </div>
+    <div class="alert alert-success alert-dismissable" ng-controller="ReviewController" ng-show="successReview">
+        <a class="close" data-dismiss="alert" aria-label="close"
+           ng-click="successReview = false">&times;</a> <strong>{{ 'index.success'
+        | translate }}</strong> {{ 'index.reviewOk' | translate }}.
+    </div>
 </div>
-<div class="alert alert-success alert-dismissable" ng-controller="ReviewController" ng-show="successReview" >
- 	<a class="close" data-dismiss="alert" aria-label="close"
- 		ng-click="successReview = false" >&times;</a> <strong>{{ 'index.success'
- 		| translate }}</strong> {{ 'index.reviewOk' | translate }}.
-</div>
+
+<link href="css/itemDisplay.css" rel="stylesheet">
