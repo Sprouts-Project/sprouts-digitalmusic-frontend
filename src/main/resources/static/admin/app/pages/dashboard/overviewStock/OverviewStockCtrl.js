@@ -14,7 +14,7 @@
     
     function setChartOverviewStockMap(areas){
     	//Month sales by state
-	    var map = AmCharts.makeChart('overviewStockMap', {
+	    AmCharts.makeChart('overviewStockMap', {
 	      type: 'map',
 	      theme: 'blur',
 	      zoomControl: { zoomControlEnabled: false, panControlEnabled: false },
@@ -68,7 +68,7 @@
     	});
     	chartData = orderByFilter(chartData, 'date', false);
 	  
-    	var chart = AmCharts.makeChart("overviewStockChart", {
+    	AmCharts.makeChart("overviewStockChart", {
     	    "type": "serial",
     	    "theme": "light",
     	    "dataProvider": chartData,
@@ -116,28 +116,29 @@
     	//Month sales
     	var dataArr = response.data.monthly_sales_by_state;
 
-		var month = 1;
-		var year = 2018;
+    	function getSpecificColor(item, index){
+    		var color = getColor(item.sales, min, max, step);
+    		areas.push({ title: item.state, color: color, id: item.abbreviation, customData: parseFloat(item.sales).toFixed(2) });
 
+    	}
+    	
+    	function getMaxAndMin(item, index){
+    		var val = item.sales;
+    		max = (val > max)?val : max;
+    		min = (min < 0 || min > val)? val : min;
+    	}
+    	
 		var options = [];
 		for (var i = 0; i < dataArr.length; i++) {
 			
 			var statesSales = dataArr[i].statesSales;
 			
 			var areas = [], max = 0, min = -1, step = 0;
-			statesSales.forEach(function(item, index){
-	    		var val = item.sales;
-	    		max = (val > max)?val : max;
-	    		min = (min < 0 || min > val)? val : min;
-	    	});
+			statesSales.forEach(getMaxAndMin);
 	    	
 	    	step = (max-min) / 6;
 
-	    	statesSales.forEach(function(item, index){
-	    		var color = getColor(item.sales, min, max, step);
-	    		areas.push({ title: item.state, color: color, id: item.abbreviation, customData: parseFloat(item.sales).toFixed(2) });
-
-	    	});
+	    	statesSales.forEach(getSpecificColor);
 			
 			options.push({
 				name : dataArr[i].month + "/" + dataArr[i].year,
