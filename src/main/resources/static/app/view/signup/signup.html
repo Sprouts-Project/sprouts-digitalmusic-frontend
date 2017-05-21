@@ -10,7 +10,7 @@
                                                                                      placeholder="{{ 'signup.name' | translate }}"
                                                                                      ng-model="customerInfo.name"
                                                                                      required>
-                    <div ng-show="customerForm.$submitted || customerForm.name.$touched">
+                    <div ng-show="customerForm.$submitted || !customerForm.name.$valid">
                         <span ng-show="customerForm.name.$error.required"
                               class="hasError">{{ 'signup.name_required' | translate }}</span>
                     </div>
@@ -22,9 +22,11 @@
                                                                                        placeholder="{{ 'signup.email' | translate }}"
                                                                                        ng-model="customerInfo.email"
                                                                                        required>
-                    <div ng-show="customerForm.$submitted || customerForm.email.$touched">
+                    <div ng-show="customerForm.$submitted || !customerForm.email.$valid">
                         <span ng-show="customerForm.email.$error.required"
                               class="hasError">{{ 'signup.email_required' | translate }}</span>
+                        <span ng-show="customerForm.email.$error.email"
+                              class="hasError">{{ 'signup.email_format' | translate }}</span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -34,9 +36,11 @@
                                                                                                placeholder="{{ 'signup.birthDate' | translate }}"
                                                                                                ng-model="customerInfo.birthdate"
                                                                                                required>
-                    <div ng-show="customerForm.$submitted || customerForm.birthdate.$touched">
+                    <div ng-show="customerForm.$submitted || !customerForm.birthdate.$valid">
                         <span ng-show="customerForm.birthdate.$error.required"
                               class="hasError">{{ 'signup.birthDate_required' | translate }}</span>
+                        <span ng-show="customerForm.birthdate.$error.date"
+                              class="hasError">{{ 'signup.birthDate_format' | translate }}</span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -46,7 +50,7 @@
                                                                                        placeholder="{{ 'signup.state' | translate }}"
                                                                                        ng-model="customerInfo.state"
                                                                                        required>
-                    <div ng-show="customerForm.$submitted || customerForm.state.$touched">
+                    <div ng-show="customerForm.$submitted || !customerForm.state.$valid">
                         <span ng-show="customerForm.state.$error.required"
                               class="hasError">{{ 'signup.state_required' | translate }}</span>
                     </div>
@@ -78,7 +82,7 @@
                                                                                              placeholder="{{ 'signup.username' | translate }}"
                                                                                              ng-model="userAccountInfo.username"
                                                                                              required>
-                    <div ng-show="userAccountForm.$submitted || userAccountForm.username.$touched">
+                    <div ng-show="userAccountForm.$submitted || !userAccountForm.username.$valid">
                         <span ng-show="userAccountForm.username.$error.required"
                               class="hasError">{{ 'signup.username_required' | translate }}</span>
                     </div>
@@ -90,7 +94,7 @@
                                                                                              placeholder="{{ 'signup.password' | translate }}"
                                                                                              ng-model="userAccountInfo.password"
                                                                                              required>
-                    <div ng-show="userAccountForm.$submitted || userAccountForm.password.$touched">
+                    <div ng-show="userAccountForm.$submitted || !userAccountForm.password.$valid">
                         <span ng-show="userAccountForm.password.$error.required"
                               class="hasError">{{ 'signup.password_required' | translate }}</span>
                     </div>
