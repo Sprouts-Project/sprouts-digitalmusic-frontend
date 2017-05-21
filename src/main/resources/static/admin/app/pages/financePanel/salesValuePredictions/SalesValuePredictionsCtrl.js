@@ -20,7 +20,7 @@
     	chartData = orderByFilter(chartData, 'date', false);
 	  
     	//Monthly sales
-    	var chart = AmCharts.makeChart("amchart", {
+    	AmCharts.makeChart("amchart", {
     	    "type": "serial",
     	    "theme": "light",
     	    "dataProvider": chartData,

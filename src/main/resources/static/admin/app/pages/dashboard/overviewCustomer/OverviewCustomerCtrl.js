@@ -69,7 +69,7 @@
 
     	});
     	
-	    var map = AmCharts.makeChart('amChartMap2', {
+	    AmCharts.makeChart('amChartMap2', {
 	      type: 'map',
 	      theme: 'blur',
 	      zoomControl: { zoomControlEnabled: false, panControlEnabled: false },
@@ -98,22 +98,22 @@
 	    });
 	    
 	    //Average age by state
-	    var areas = [],max = 0, min = -1, step = 0;
+	    var areasState = [],maxState = 0, minState = -1, stepState = 0;
     	
 	    response.data.average_age_by_state.forEach(function(item, index){
     		var val = item.age;
-    		max = (val > max)?val : max;
-    		min = (min < 0 || min > val)? val : min;
+    		maxState = (val > maxState)?val : maxState;
+    		minState = (minState < 0 || minState > val)? val : minState;
     	});
     	
-    	step = (max-min) / 6;
+    	stepState = (maxState-minState) / 6;
 
     	response.data.average_age_by_state.forEach(function(item, index){
-    		var color = getColor(item.age, min, max, step);
-    		areas.push({ title: item.name, color: color, id: item.abbreviaton, customData: parseFloat(item.age).toFixed(2) });
+    		var color = getColor(item.age, minState, maxState, stepState);
+    		areasState.push({ title: item.name, color: color, id: item.abbreviaton, customData: parseFloat(item.age).toFixed(2) });
     	});
     	
-	    var map = AmCharts.makeChart('amChartMap', {
+	    AmCharts.makeChart('amChartMap', {
 	      type: 'map',
 	      theme: 'blur',
 	      zoomControl: { zoomControlEnabled: false, panControlEnabled: false },
@@ -123,7 +123,7 @@
 	        zoomLevel: 1,
 	        zoomLongitude: 10,
 	        zoomLatitude: 52,
-	        areas: areas
+	        areas: areasState
 	      },
 	
 	      areasSettings: {

@@ -15,9 +15,6 @@
 				function(response) {
 					var dataArr = response.data;
 
-					var month = 1;
-					var year = 2018;
-
 					var options = [];
 					for (var i = 0; i < dataArr.length; i++) {
 						options.push({

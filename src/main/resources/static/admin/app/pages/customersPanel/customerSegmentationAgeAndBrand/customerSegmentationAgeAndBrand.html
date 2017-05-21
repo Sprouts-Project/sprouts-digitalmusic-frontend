@@ -12,17 +12,17 @@
 		<thead>
 			<tr>
 				<th class="table-id">#</th>
+				<th>Number of customers</th>
 				<th>Age interval</th>
 				<th>Brands</th>
-				<th>Number of customers</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat="item in items">
 				<td class="table-id">{{item.profile_id}}</td>
+				<td>{{item.number_customers}}</td>
 				<td>{{item.age_interval}}</td>
 				<td>{{item.brands.join(", ")}}</td>
-				<td>{{item.number_customers}}</td>
 			</tr>
 		</tbody>
 	</table>
