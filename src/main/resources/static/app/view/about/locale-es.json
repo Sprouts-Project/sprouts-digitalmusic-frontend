@@ -1,0 +1,15 @@
+{
+	"about.about": "Acerca de",
+	"about.why": "¿Por qué",
+	"about.why_answer": "En Sprouts hemos configurado una plantilla para desarrollar sistemas de información web y Sprouts Digital Music tiene el propósito de probar la configuración realizada para asegurar que la plantilla funciona correctamente.",
+	"about.why_answer_1": "La razón por la que hemos hecho una web de comercio electrónico en relación con música digital es porque estamos utilizando un dataset proporcionado por",
+	"about.why_answer_2": "de tal forma que nuestro módulo de Data Mining pueda probar su trabajo.",
+	"about.why_develop": "¿Por qué desarrollar esto?",
+	"about.why_develop_answer": "Nos hemos involucrado en Sprouts porque queremos mejorar nuestros CVs en relación a las compañías en las que nos gustaría trabajar. Creemos que aprendiendo las tecnologías que estas compañías utilizan, demostramos un alto nivel de interés y habilidad para aprender nuevas tecnologías y solucionar problemas por nosotros mismos.",
+	"about.technologies": "¿Cuáles son estas tecnologías?",
+	"about.technologies_answer": "Desarrollando Sprouts y Sprouts Digital Music, hemos demostrado conocimiento sobre muchas tecnologías diferentes. Estas son: Spring Boot, MySQL, Bootstrap, JDBC, Hibernate, AngularJS, Java, Eureka Netflix, Eureka Zuul, Docker, Jenkins, Nexus Sonatype, Scala, Apache Spark, Spark Job Server y MongoDB.",
+	"about.overall": "¿Cómo funciona todo esto?",
+	"about.overall_answer_fw": "En el módulo del framework hemos desarrollado un sistema de información web partiendo de la plantilla de sprouts-core. Nuestros microservicios de frontend y backend se registran a sí mismos en un servidor de discovery llamado Eureka.",
+	"about.overall_answer_do": "En el módulo de DevOps nos hemos encargado de gestionar un repositorio con todas las diferentes versiones, evaluado la calidad del código y construido un pipeline que permite el despliegue automático de nuestros microservicios en un contenedor de Docker.",
+	"about.overall_answer_dm": "Por último, en el módulo de Data Mining hemos programado una serie de jobs en Apache Spark para analizar los datos generados en nuestra aplicación, realizando predicciones de venta, segmentación de clientes y muchas operaciones estadísticas más."
+}

@@ -37,6 +37,9 @@
         }).when('/order/admin/list', {
             controller : 'OrderAdminController',
             templateUrl : '/app/view/order/list_orders.html'
+        }).when('/about', {
+            controller : 'AboutController',
+            templateUrl : '/app/view/about/info.html'
         }).otherwise('/');
 	} ]);
 })();

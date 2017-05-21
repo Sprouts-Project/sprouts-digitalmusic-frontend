@@ -1,0 +1,15 @@
+{
+  "about.about": "About",
+  "about.why": "Why",
+  "about.why_answer": "At Sprouts, we have configured a template for developing web information systems and Sprouts Digital Music is intented to test the configuration in order to make sure that our template works as expected.",
+  "about.why_answer_1": "The reason we have made an e-commerce shop regarding digital music is because we are using a dataset provided by",
+  "about.why_answer_2": "so that our Data Mining module can test their work.",
+  "about.why_develop": "Why develop this?",
+  "about.why_develop_answer": "We have enrolled ourselves in Sprouts because we want to enhance our CVs regarding the companies that we would like to work in. We think that, by learning the technologies that such companies use, we would demonstrate a high level of interest and ability to learn new technologies and solve problems by ourselves.",
+  "about.technologies": "What are such technologies?",
+  "about.technologies_answer": "By developing Sprouts and Sprouts Digital Music, we have demonstrated knowledge over many technologies. Such technologies are: Spring Boot, MySQL, Bootstrap, JDBC, Hibernate, AngularJS, Java, Eureka Netflix, Eureka Zuul, Docker, Jenkins, Nexus Sonatype, Scala, Apache Spark, Spark Job Server and MongoDB.",
+  "about.overall": "How does it all work?",
+  "about.overall_answer_fw": "In the framework core module, we have developed the web information system by means of using our sprouts-core template. Our backend and frontend microservices register themselves to a discovery server called Eureka.",
+  "about.overall_answer_do": "In the DevOps module, we have taken care of managing a repository with all different versions, evaluated software quality and built a pipeline for automatically deploying our microservices in a Docker container.",
+  "about.overall_answer_dm": "At last, in the Data Mining module we have programmed a series of jobs in Apache Spark in order to analyze the data that is generated in our application, performing sales predictions, customer segmentation and many more statistical data."
+}
