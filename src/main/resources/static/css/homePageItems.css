@@ -1,0 +1,26 @@
+.thumbnail {
+  height: 100px;
+}
+
+@media (min-width: 1200px) {
+  .thumbnail {
+    height: 400px;
+    /*max-height: 150px;*/
+  }
+}
+
+#object {
+	height: 300px;
+    /*max-height: 150px;*/
+	
+}
+
+.card-height {
+  min-height: 50px;
+  /*max-height: 100px;*/
+}
+
+.list-group-image {
+  min-height: 100px;
+  /*max-height: 150px;*/
+}
