@@ -1,6 +1,7 @@
 'use strict';
 (function () {
     var ItemController = function ($scope, $http, AuthService) {
+        const windowSize = 2;
         $scope.items = [],
             $scope.paginationInfo = {
                 showFirstEllipsis: false,
@@ -11,11 +12,21 @@
             },
             $scope.range = function () {
                 var result = [];
-                for (var i = $scope.paginationInfo.minPage + 1; i < $scope.paginationInfo.maxPage; i++) {
-                    if (i != $scope.paginationInfo.totalPages - 1) {
+                if ($scope.paginationInfo.currentPage <= windowSize / 2) {
+                    for (var i = 1; i <= windowSize + 1; i++) {
+                        result.push(i);
+                    }
+                } else if ($scope.paginationInfo.currentPage >= $scope.paginationInfo.totalPages - (windowSize / 2) - 1) {
+                    for (var i = $scope.paginationInfo.totalPages - windowSize - 2; i <= $scope.paginationInfo.totalPages - 2; i++) {
+                        result.push(i);
+                    }
+
+                } else {
+                    for (var i = $scope.paginationInfo.currentPage - windowSize / 2; i <= $scope.paginationInfo.currentPage + windowSize / 2; i++) {
                         result.push(i);
                     }
                 }
+
                 return result;
             },
             $scope.error = false;
